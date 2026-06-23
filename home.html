@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Offcanvas + navbar</title>
+</head>
+<body>
+  <header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+   
+    <!--BARRA LATERAL OFFCANVAS (cuidado con el style que le puse => 20px) El Span contiene el punto rojo que asemeja una notificación para alertar al usuario de revisarlo jajaj-->
+    <button class="btn list-icon me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="font-size: 20px;">
+      <i class="bi bi-list"> <span class="position-absolute top-1 p-1 bg-danger border border-light rounded-circle"></span></i>
+    </button>
+    
+    <!--ACÁ COMIENZA EL NAVBAR CON EL LOGO-->
+        <a class="navbar-brand" href="#">
+            <img src="img/LOGO_WEB-removebg-preview.png" alt="Logo" width="43" height="40" class="d-inline-block align-middle"><b class="gradient-text">TutorNow</b>
+        </a>  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--revisar el nav-link active para colocarlo también en todos y que al presionarlos se cambien de color y se activen (en el css) NECESITO JAVASCRIPT-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-2">
+          <a class="nav-link active" aria-current="page" href="#"> 
+            <i class="bi bi-house-door"></i>Inicio </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#">
+            <i class="bi bi-people"></i>Tutores</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#"> 
+            <i class="bi bi-book"></i>Recursos</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#">
+            <i class="bi bi-calendar-week"></i>Mis tutorías</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="#">
+            <i class="bi bi-question-circle"></i>Más información</a>
+        </li>
+        
+        <!--ÍCONO DE PERFIL DEL NAVBAR-->
+        <li class="nav-item mx-2 dropdown">
+            <a class="nav-link profile-icon d-flex align-items-center" href="#" 
+            data-bs-toggle="dropdown"> <!--ESE PERFIL.HTML ES UN EJEMPLO-->
+              <i class="bi bi-person-circle"></i></a>
+
+        <!--lo modifiqué para que tuviera dropdown-->
+              <ul class="dropdown-menu dropdown-menu-end" id="dropdown-perfil">
+            <li class="text-end px-2 pt-1">
+              <button type="button" class="btn-close"></button>
+            </li>
+            <li>
+              <strong class="dropdown-header" id="NombrePerfilDrop">
+                <i class="bi bi-person me-2" id="FotoPerfilDrop"></i> Nombre
+              </strong>
+            </li>
+            <hr>
+            <li class="dropdown-item">
+              <a href="EditPerfil.html" 
+              style="text-decoration: none; color: #5e6164; font-weight: 500;">
+              <i class="bi bi-brush me-2"></i>Editar perfil </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>  
+
+<!--Código del offcanvas (no lo puse arriba para no kgar el navbar)-->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header">
+    <button class="btn" data-bs-dismiss="offcanvas" style="font-size: 20px;">
+    <i class="bi bi-list"></i>
+  </button>
+    <h5 class="offcanvas-title ms-2">TutorNow</h5>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="list-unstyled">
+       
+        <li class="my-4 mx-3"><a href="#" class="offcanvas-link"> Notificaciones
+        <i class="bi bi-bell ms-2"></i> </a> </li>
+        <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Mis notas
+        <i class="bi bi-stickies ms-2"></i> </a> </li>
+       <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Favoritos
+        <i class="bi bi-bookmarks ms-2"></i> </a> </li>  
+       <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Mensajes
+        <i class="bi bi-chat-square-dots ms-2"></i> </a> </li>
+  <hr>
+      <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Modo de pago
+        <i class="bi bi-coin ms-2"></i> </a> </li>
+      <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Políticas
+        <i class="bi bi-shield-lock ms-2"></i> </a> </li>
+    </ul>
+    <!--EL MS QUE SE COLOCA AL FINAL DE CIERTAS CLASES COMO "MARGIN (M)". Después del M se coloca (S;E;X;Y) => Start, End, X axis, Y axis -->
+    
+    <!--Ícono de cerrar sesión-->
+    <div class="offcanvas-footer">
+      <a class="offcanvas-link" href="#"> Salir 
+        <i class="bi bi-box-arrow-left ms-2"></i> </a>
+
+    </div>
+  </div>
+</div>
+ 
+<main>
+  <!--El hero-->
+    <div class="container my-5"> 
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"> 
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3"> 
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis">¡Bienvenido!</h1> 
+                <p class="lead"><q class="frase">Frase</q></p> 
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"> 
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Buscar tutores</button> 
+     
+                </div> 
+            </div> 
+            <!--p0 Significa padding=0. Si quiero que la imgagen tenga un margen bonito puedo subirlo a p4.-->
+            <div class="col-lg-4 p-0 my-5">
+                <img class="rounded-lg-3" src="img/pngtree-cute-penguin-cartoon-illustration-png-image_15851573.png" width="420">
+            </div> 
+        </div> 
+    </div>
+    <!--Estas son las funciones-->
+    <div class="container px-4 py-5" id="featured-3">  
+        <h2 class="pb-2 border-bottom">Funciones principales</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3"> 
+            <div class="feature col"> 
+                <h4 class="fs-2 text-body-emphasis">✨ IA ✨</h4>
+                 <!--Div para la imagen-->
+                <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2 mb-3"> 
+                    <img src="img/OIP.webp" class="rounded-3" width="200">
+                    </div> 
+                    <p>Contamos con una herramienta de inteligencia artifial generativa la cual podrán utilizar 
+                      si se desea reforzar conocimientos en temas. Esta IA genera talleres interactivos descargables.
+                    </p>
+            </div>
+            <div class="feature col"> 
+                <h4 class="fs-2 text-body-emphasis">📅 Mis tutorías 📅</h4> 
+                <!--Div para la imagen-->
+                <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2 mb-3"> 
+                    <img src="img/OIP.webp" class="rounded-3" width="200">
+                    </div> 
+                    <p>'Mis tutorías' es el apartado de calendario que le permite ingresar al usuario las fechas ocupadas por tutorías.
+                      Esta función se implementó con el fin de llevar una constancia de las clases impartidas y recibidas.</p> 
+            </div> 
+            <div class="feature col"> 
+                <h4 class="fs-2 text-body-emphasis">🔎 Buscar 🔎</h4> 
+                 <!--Div para la imagen-->
+                <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2 mb-3"> 
+                    <img src="img/OIP.webp" class="rounded-3" width="200">
+                    </div> 
+                    <p>El apartado de 'buscar' le permite al usuario la busqueda de perfiles de docentes o estudiantes ¡Siéntanse cómodos de 
+                      escoger su preferido!
+                    </p> 
+            </div>
+        </div> 
+    </div>
+    <!--Esta es la información general-->
+    <div class="container px-4"> 
+        <h2 class="pb-2 border-bottom">Información general</h2> 
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5"> 
+            <div class="col d-flex flex-column align-items-start gap-2"> 
+                <h2 class="fw-bold text-body-emphasis">¿Cómo nos manejamos?</h2> 
+                <p class="text-body-secondary">Esta es una plataforma interactiva que conecta a estudiantes con tutores listos para echarles una mano en lo que necesiten. Nuestra web ofrece variedad de docentes disponibles y dispuestos a ofrecer la ayuda exacta que necesitan.
+                  Con nuestra plataforma, los estudiantes pueden obtener un soporte académico de manera sencilla y desde cualquier lugar. Ofrecemos una forma más accesible y flexible de aprender, adaptadas a las necesidades estudiantiles.
+                </p> 
+            </div> 
+         <div class="col">
+            <div class="row"> 
+                    <div class="col"> 
+                        <img src="img/istockphoto-624288698-612x612.jpg" class="rounded-5"  width="500">
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div> 
+</main>  
+   <!--footer--> 
+    <div class="container"> 
+        <footer class="row py-5 my-5 border-top"> 
+            <div class="col mb-3"> 
+                <img src="img/LOGO_WEB-removebg-preview.png" width="47" height="45">
+                    <p class="text-body-secondary">© 2026</p> 
+            </div> 
+            <div class="col mb-3">          <!--ESte div es solo pa tener espacio-->
+            </div> 
+                <div class="col mb-3"> 
+                    <h5>Nosotros</h5> 
+                    <ul class="nav flex-column"> 
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Nuestros servicios</a>
+                        </li> 
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Privacidad</a>
+                        </li> 
+                        <li class="nav-item mb-2">
+                                <a href="#" class="nav-link p-0 text-body-secondary">ALGO MÁS</a>
+                        </li> 
+                    </ul> 
+                </div> 
+                <div class="col mb-3"> 
+                    <h5>Ayuda</h5> 
+                    <ul class="nav flex-column"> 
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Preguntas</a>
+                        </li> 
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Problemas</a>
+                        </li> 
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Pagos</a>
+                        </li> 
+                    </ul> 
+                </div> 
+                <div class="col mb-3"> 
+                    <h5>Tutorías</h5> 
+                    <ul class="nav flex-column"> 
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Clases</a>
+                        </li> 
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">Prácticas</a>
+                        </li> 
+                    </ul> 
+                </div> 
+                <div class="col mb-3"> 
+                    <h5>Síguenos</h5> 
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" id="social-link">
+                            <a href="#" class="nav-link p0"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
+                        </li>
+                    </div>
+                    </ul>
+                </div>
+        </footer> 
+    </div>
+
+
+
+<!--ESTO ES UN JAVA SCRIPT FUNCIONAL SACADO DE CHATGPT PARA QUE CADA QUE SE PRESIONA UN LINK, SE ACTIVE EL COLOR EN ELLOS-->
+<script>
+  const links = document.querySelectorAll(".nav-link");
+
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      // quitar active de todos
+      links.forEach(l => l.classList.remove("active"));
+      
+      // agregar active al que se clickeó
+      this.classList.add("active");
+    });
+  });
+</script>
+<!--script para los links del offcanvas (es lo mismo q el navbar pero cambia la class)-->
+<script>
+  const OffClinks = document.querySelectorAll(".offcanvas-link");
+
+  OffClinks.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      OffClinks.forEach(l => l.classList.remove("active"));
+      
+      this.classList.add("active");
+    });
+  });
+</script>
+
+<!--SCRIPT DE BOOTSTRAP QUE ME PERMITE ABRIR EL MENÚ EN MODO CELULAR-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
