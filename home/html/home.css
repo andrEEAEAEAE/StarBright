@@ -144,3 +144,14 @@ body{
 #social-link:hover{
     transform: scale(1.05);
 }
+.frase{
+    background: linear-gradient(40deg, rgb(54, 52, 212), rgb(144,198,252));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: 600;
+}
+.btn.btn-primary{
+    border-radius: 20px;
+    background: linear-gradient(30deg, rgb(41, 39, 206), rgb(93, 136, 255));
+    border: none;
+}
