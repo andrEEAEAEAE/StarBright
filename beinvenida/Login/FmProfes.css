@@ -1,0 +1,20 @@
+body{
+    family-font: sans-serif;
+}
+.brand-text{
+    font-size: 1.3rem;
+}
+.navbar-brand{
+    cursor: default;
+}
+button{
+    background: linear-gradient(to right, rgb(68, 175, 84), rgb(87, 255, 87));
+    border: none;
+    padding: 7px 20px;
+    color: white;
+    font-weight: bold;
+}
+button:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
