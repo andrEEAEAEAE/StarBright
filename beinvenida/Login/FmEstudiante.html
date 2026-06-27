@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+     <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div class="container-fluid text-align-center ms-3">
             <a class="navbar-brand" href="#">
              <img src="imag/LOGO_WEB-removebg-preview.png" alt="Logo" width="45" height="43" class="d-inline-block align-middle">
@@ -18,42 +18,40 @@
         </div>
      </nav>
     </header> 
-    <main>
+    <!--BANNER-->
+        <div class="container" id="banner-bg">
         <div class="banner">
         <div class="banner-content">
-            <h1>Regístrate</h1>
+            <h1 style="font-size: 3rem;">Regístrate</h1>
             <p>
-                Completa el formulario para formar parte de nuestra
-                próxima aventura espacial.
-            </p>
+                Completa el formulario para que formes parte
+                de un mejor futuro.
+           </p>
         </div>
-        <img src="cohete.png" class="banner-img">
+        
     </div>
-    </main>
-
+    <img src="imag/𝐋𝐨_𝐌𝐞𝐣𝐨𝐫_𝐝𝐞_𝐀𝐫𝐜𝐚𝐧𝐨-removebg-preview.png" class="banner-img">
+    </div>
+<!--FORMULARIO-->
+    <div class="container">
     <div class="formulario">
     <form action="#" method="post">
-        <label>Nombre:</label><br>
-        <input type="text" name="nombre" required><br><br>
- 
-        <label>Apellido:</label><br>
-        <input type="text" name="apellido" required><br><br>
- 
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+        <br>
+        <input type="email" class="form-control" placeholder="E-mail" required><br>
+        
+        <div class="row">
+         <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Nombre" required><br>
+         </div>
+         <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Apellido" required> <br>
+         </div>
+        </div>
+        
+        <input type="tel" class="form-control" placeholder="Teléfono"><br>
 
-        <label>Teléfono:</label><br>
-        <input type="tel" name="telefono"><br><br>
- 
-        <label>Grado o nivel escolar:</label><br>
-        <select name="grado o nivel escolar">
-            <option>Premedia</option>
-            <option>Media</option>
-            <option>Universidad</option>
-        </select><br><br>
-
-        <label>Distrito:</label><br>
-        <select name="distrito">
+        <select class="form-select" placeholder="Distrito">
+         <option selected>Distrito</option>
             <option>Atalaya</option>
             <option>Calobre</option>
             <option>Cañazas</option>
@@ -66,13 +64,26 @@
             <option>Santa Fe</option>
             <option>Santiago</option>
             <option>Soná</option>
-        </select><br><br>
+        </select> <br>
 
-        <label>Institucion educativa:</label><br>
-        <input type="text" name="institucion_educativa"><br><br>
- 
+        <div class="row">
+         <div class="col-md-6">
+            <select class="form-select" placeholder="Grado o nivel escolar">
+            <option selected>Grado o nivel escolar</option>
+            <option>Premedia</option>
+            <option>Media</option>
+            <option>Universidad</option>
+            </select>
+         </div>
+         <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Institucion educativa">
+         </div>
+        </div> 
+        <br>
         <button type="submit" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
     </form>
     </div>
+    </div>
+
 </body>
 </html>

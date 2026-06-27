@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+     <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div class="container-fluid text-align-center ms-3">
             <a class="navbar-brand" href="#">
              <img src="imag/LOGO_WEB-removebg-preview.png" alt="Logo" width="45" height="43" class="d-inline-block align-middle">
@@ -18,44 +18,66 @@
         </div>
      </nav>
     </header> 
-
+<!--BANNER-->
+    <div class="container" id="banner-bg">
+        <div class="banner">
+        <div class="banner-content">
+            <h1 style="font-size: 2.8rem;">Regístrate</h1>
+            <p>
+                Completa el formulario para que formes parte
+                de un mejor futuro.
+           </p>
+        </div>
+        
+    </div>
+    <img src="imag/𝐋𝐨_𝐌𝐞𝐣𝐨𝐫_𝐝𝐞_𝐀𝐫𝐜𝐚𝐧𝐨-removebg-preview.png" class="banner-img">
+    </div>
+<!--FORMULARIO-->
+    <div class="container">
     <div class="formulario">
     <form action="#" method="post">
-        <label>Nombre:</label><br>
-        <input type="text" name="nombre" required><br><br>
- 
-        <label>Apellido:</label><br>
-        <input type="text" name="apellido" required><br><br>
+        <br>
+        <input type="email" class="form-control" placeholder="E-mail" required><br>
+        
+        <div class="row">
+         <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Nombre" required><br>
+         </div>
+         <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Apellido" required> <br>
+         </div>
+        </div>
+        
+        <input type="tel" class="form-control" placeholder="Teléfono"><br>
 
-        <label>email:</label><br>
-        <input type="email" name="correo" required><br><br>
- 
-        <label>Teléfono:</label><br>
-        <input type="tel" name="telefono"><br><br>
- 
-        <label>Fecha de Nacimiento:</label><br>
-        <input type="date" name="fecha_nacimiento"><br><br>
- 
-        <label>Titulos:</label><br>
-        <input type="text" name="Titulos"><br><br>
- 
-        <label>Area de especialidad:</label><br>
-        <input type="text" name="Area_de_especialidad"><br><br>
- 
-        <label>Modalidad preferencial:</label><br>
-        <input type="date" name="Modalidad_preferencial"><br><br>
- 
-        <label>Modalidad preferida:</label><br>
-        <select name="modalidad">
+        <label>Fecha de nacimiento:</label>
+        <input type="date" class="form-control"  name="Fecha_nacimiento"> <br>
+
+        <div class="row">
+          <div class="col-md-6">
+          <input type="text" class="form-control"  placeholder="Especialización en docencia">
+          </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control"  placeholder="Títulos">
+        </div>
+        </div><br>
+
+        <div class="row">
+         <div class="col-md-6">
+            <select class="form-select" name="Modalidad_preferida">
+            <option selected>Modalidad preferida</option>
             <option>Presencial</option>
             <option>Online</option>
-        </select><br><br>
-
-        <label>Tiempo de experiencia laboral:</label><br>
-        <input type="text" name="Tiempo_de_experiencia_laboral"><br><br>
-        
+            </select>
+         </div>
+         <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Años laborando">
+         </div>
+        </div> 
+        <br>
         <button type="submit" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
     </form>
     </div>
+    
 </body>
 </html>
