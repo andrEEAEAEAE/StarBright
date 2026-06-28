@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana de Bienvenida</title>
+    <link rel="stylesheet" href="anuncio.css">
+</head>
+<body>
+    <div class="overlay" id="popup">
+        <div class="popup">
+            <button class="close" onclick="cerrarPopup()">✕</button>
+            
+            <img src="img/medalla.png" class="img-popupMed">
+            <img src="img/regalos.png" class="img-popupReg">
+            <img src="img/cupon.png" class="img-popupCup">
+             <img src="img/festejo.png" class="img-popupFes">
+
+            <div class="contenido">
+                <div class="texto">
+                    <br>
+                    <h2>¡Bienvenido!</h2>
+                    <p>Aprovecha el descuento en tus primeras <span>tres</span> sesiones.
+                        ¡No te lo pierdas!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!--Script para cerrar el popup-->
+<script>
+    function cerrarPopup() {
+    document.getElementById("popup").style.display = "none";
+    }
+</script>
+<!--Script para pop-up-->
+<script>
+    window.onload = function () {
+    setTimeout(function () {
+        document.getElementById("popup").style.display = "flex";
+    }, 2000);
+};
+</script>
+</body>
+</html>
