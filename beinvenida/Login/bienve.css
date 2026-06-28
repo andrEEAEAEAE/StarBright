@@ -15,6 +15,9 @@ body{
 }
 .brand-text{
     font-size: 1.3rem;
+     background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .navbar-brand{
     cursor: default;

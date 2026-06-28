@@ -1,5 +1,5 @@
 body{
-    background: radial-gradient(circle at center, white, white, #e1e1ff); 
+    background: radial-gradient(circle at center, white, white, #88b1ee 150%); 
 }
 body{
     font-family: sans-serif;    
@@ -12,7 +12,8 @@ body{
 }
 h1{
     margin-bottom: 60px;
-    
+    color: rgb(95, 95, 95);
+    font-size: 2.3rem;
 }
 .card-container{
     display: flex;
@@ -50,7 +51,6 @@ span{
     position: absolute;
     bottom: 160px;
     font-size: 1.3rem;
-    
     
 }
 span:hover{
