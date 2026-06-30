@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Home</title>
+</head>
+<body>
+  <header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="btn list-icon me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="font-size: 20px;">
+      <i class="bi bi-list"> <span class="position-absolute top-1 p-1 bg-danger border border-light rounded-circle"></span></i>
+    </button>
+        <a class="navbar-brand" href="#">
+            <img src="img/LOGO_WEB-removebg-preview.png" alt="Logo" width="43" height="40" class="d-inline-block align-middle"><b class="gradient-text">TutorNow</b>
+        </a>  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-2">
+          <a class="nav-link" aria-current="page" href="home.html"> 
+            <i class="bi bi-house-door"></i>Inicio </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="tutores.html">
+            <i class="bi bi-people"></i>Tutores</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="IA.html"> 
+            <i class="bi bi-book"></i>Recursos</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="calendario.html">
+            <i class="bi bi-calendar-week"></i>Mis tutorías</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="CentroAyuda.html">
+            <i class="bi bi-question-circle"></i>Más información</a>
+        </li>
+        <li class="nav-item mx-2 dropdown">
+            <a class="nav-link profile-icon d-flex align-items-center" href="#" 
+            data-bs-toggle="dropdown"> <!--ESE PERFIL.HTML ES UN EJEMPLO-->
+              <i class="bi bi-person-circle"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end" id="dropdown-perfil">
+            <li class="text-end px-2 pt-1">
+              <button type="button" class="btn-close"></button>
+            </li>
+            <li>
+              <strong class="dropdown-header" id="NombrePerfilDrop">
+                <i class="bi bi-person me-2" id="FotoPerfilDrop"></i> Nombre
+              </strong>
+            </li>
+            <hr>
+            <li class="dropdown-item">
+              <a href="EditPerfil.html" 
+              style="text-decoration: none; color: #5e6164; font-weight: 500;">
+              <i class="bi bi-brush me-2"></i>Editar perfil </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>  
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header">
+    <button class="btn" data-bs-dismiss="offcanvas" style="font-size: 20px;">
+    <i class="bi bi-list"></i>
+  </button>
+    <h5 class="offcanvas-title ms-2">TutorNow</h5>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-unstyled">
+        <li class="my-4 mx-3"><a href="#" class="offcanvas-link"> Notificaciones
+        <i class="bi bi-bell ms-2"></i> </a> </li>
+        <li class="my-4 mx-3"><a href="notas.html" class="offcanvas-link">Mis notas
+        <i class="bi bi-stickies ms-2"></i> </a> </li>
+       <li class="my-4 mx-3"><a href="guardados.html" class="offcanvas-link">Favoritos
+        <i class="bi bi-bookmarks ms-2"></i> </a> </li>  
+       <li class="my-4 mx-3"><a href="mensajes.html" class="offcanvas-link">Mensajes
+        <i class="bi bi-chat-square-dots ms-2"></i> </a> </li>
+  <hr>
+      <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Modo de pago
+        <i class="bi bi-coin ms-2"></i> </a> </li>
+      <li class="my-4 mx-3"><a href="Políticas.html" class="offcanvas-link">Políticas
+        <i class="bi bi-shield-lock ms-2"></i> </a> </li>
+      </ul>
+    <div class="offcanvas-footer">
+      <a class="offcanvas-link" href="#"> Salir 
+        <i class="bi bi-box-arrow-left ms-2"></i> </a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container px-4 py-5" id="custom-cards"> 
+<!--barra de búsqeuda y filtros-->
+    <div class="row mb-4 align-items-center">
+     <div class="col">
+      <div class="busqueda">
+          <i class="bi bi-search"></i>
+          <input
+            type="text"
+            id="buscador"
+            class="form-control"
+            placeholder="Buscar...">
+      </div>
+     </div>
+     <div class="col-auto">
+      <div class="busqueda">
+        <i class="bi bi-book"></i>
+        <input
+        type="text"
+        id="buscadorMateria"
+        class="form-control"
+        placeholder="Materia...">
+      </div>
+     </div>
+     <div class="col-auto">
+        <select id="filtroPrecio" class="form-select">
+          <option value="ninguno">Ordenar...</option>
+          <option value="barato">Precio: Menor a mayor</option>
+          <option value="caro">Precio: Mayor a mayor</option>
+        </select>
+     </div>
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 align-items-stretch g-4 py-5" id="contenedor-cards">
+       <div class="col">
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col">
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Andrea Quintero </h5>
+
+            <p class="materia text-muted text-center small mb-2">Matemáticas</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Erick Chong </h5>
+
+            <p class="materia text-muted text-center small mb-2">Programación</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Ana Hernández </h5>
+
+            <p class="materia text-muted text-center small mb-2">Lengua</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$25/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Yesy Mendoza </h5>
+
+            <p class="materia text-muted text-center small mb-2">Redes</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$45/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Luis Urriola </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Biología</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$95/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Química</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$15/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Química</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$65/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Lengua</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Matemáticas</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$50/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Biología</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$30/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$10/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div><div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Matemáticas</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div><div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Química</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div><div class="col"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div> 
+        
+
+    </div>
+  </div>
+</main> 
+
+<!--ESTO ES UN JAVA SCRIPT FUNCIONAL SACADO DE CHATGPT PARA QUE CADA QUE SE PRESIONA UN LINK, SE ACTIVE EL COLOR EN ELLOS-->
+<script>
+  const links = document.querySelectorAll(".nav-link");
+
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      // quitar active de todos
+      links.forEach(l => l.classList.remove("active"));
+      
+      // agregar active al que se clickeó
+      this.classList.add("active");
+    });
+  });
+</script>
+<!--script para los links del offcanvas (es lo mismo q el navbar pero cambia la class)-->
+<script>
+  const OffClinks = document.querySelectorAll(".offcanvas-link");
+
+  OffClinks.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      OffClinks.forEach(l => l.classList.remove("active"));
+      
+      this.classList.add("active");
+    });
+  });
+</script>
+<script>
+const filtro = document.getElementById("filtroPrecio");
+const contenedor = document.getElementById("contenedor-cards");
+
+filtro.addEventListener("change", () => {
+
+    const cards = Array.from(contenedor.querySelectorAll(".col"));
+
+    cards.sort((a, b) => {
+
+        const precioA = Number(
+            a.querySelector(".precio").textContent.replace(/[^\d.]/g, "")
+        );
+
+        const precioB = Number(
+            b.querySelector(".precio").textContent.replace(/[^\d.]/g, "")
+        );
+
+        if (filtro.value === "barato") {
+            return precioA - precioB;
+        } else if (filtro.value === "caro") {
+            return precioB - precioA;
+        }
+
+        return 0;
+    });
+
+    cards.forEach(card => contenedor.appendChild(card));
+
+});
+</script>
+<script>
+const buscadorMateria = document.getElementById("buscadorMateria");
+const cardsMateria = document.querySelectorAll("#contenedor-cards .col");
+
+buscadorMateria.addEventListener("input", function () {
+
+    const texto = this.value.toLowerCase();
+
+    cardsMateria.forEach(card => {
+
+        const materia = card.querySelector(".materia").textContent.toLowerCase();
+
+        if (materia.includes(texto)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+</script>
+<script>
+const buscador = document.getElementById("buscador");
+const cards = document.querySelectorAll("#contenedor-cards .col");
+
+buscador.addEventListener("input", function () {
+
+    const texto = this.value.toLowerCase();
+
+    cards.forEach(card => {
+
+        const nombre = card.querySelector(".nombre-persona").textContent.toLowerCase();
+
+        if (nombre.includes(texto)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+</script>
+
+
+<!--SCRIPT DE BOOTSTRAP QUE ME PERMITE ABRIR EL MENÚ EN MODO CELULAR-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

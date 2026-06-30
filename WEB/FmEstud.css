@@ -1,0 +1,83 @@
+body{
+    family-font: sans-serif;
+    padding: 100px;
+}
+#navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+}
+.brand-text{
+    font-size: 1.3rem;
+     background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar-brand{
+    cursor: default;
+}
+button{
+    background: linear-gradient(to right, rgb(68, 175, 84), rgb(87, 255, 87));
+    border: none;
+    padding: 7px 20px;
+    color: white;
+    font-weight: bold;
+}
+button:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.form-control, .form-select{
+    margin-bottom:18px;
+    height:45px;
+    border-radius:10px;
+}
+.formulario{
+    max-width:520px;
+    margin:auto;
+    padding:20px 0 50px;
+}
+.container{
+    max-width: 600px;
+    margin:30px auto;
+    border-radius:15px;
+    box-shadow:0px 5px 20px rgba(0,0,0,.15);
+}
+#banner-bg{
+    max-width: 1200px;
+    margin:30px auto;
+    border-radius:15px;
+    box-shadow:0px 5px 20px rgba(0,0,0,.15);
+    background: radial-gradient(circle at center, rgb(255, 255, 255), white, rgb(193, 193, 255) 120%);
+}
+.banner{
+    height: 250px;
+    margin: 0;
+    overflow: hidden; 
+}
+
+.banner-content{
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 40px;
+    background: linear-gradient(40deg, rgb(73, 146, 255)40%, rgb(60, 40, 134) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner h1{
+    font-weight: bold;
+}
+.banner-img{
+    position:absolute;
+    right:150px;
+    bottom: 165px;
+    z-index:3;
+    width: 200px;
+
+}

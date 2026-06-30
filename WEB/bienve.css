@@ -1,0 +1,24 @@
+body{
+    font-family: sans-serif;
+}
+#BtnInicio{
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 1.5rem;
+    background: linear-gradient(210deg, rgb(162, 163, 253), rgb(27, 39, 219));
+    border: none;
+    font-weight: 500;
+}
+#BtnInicio:Hover{
+    transform: scale(1.07);
+    transition: 0.4s;
+}
+.brand-text{
+    font-size: 1.3rem;
+     background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar-brand{
+    cursor: default;
+}
