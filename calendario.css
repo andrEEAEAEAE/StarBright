@@ -1,0 +1,365 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:#eef3fb;
+  min-height:100vh;
+  padding:18px;
+  color:#111827;
+}
+
+.container{
+  max-width:1450px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2.2fr 1fr;
+  gap:18px;
+}
+
+/* =======================
+   CALENDARIO
+======================= */
+
+.calendar-wrapper{
+  background:#fff;
+  border-radius:28px;
+  padding:22px;
+  box-shadow:0 8px 30px rgba(0,0,0,.05);
+}
+
+.calendar-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.nav-btn{
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:#f3f6ff;
+  color:#2346c8;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.month-title{
+  font-size:34px;
+  font-weight:700;
+}
+
+.today-btn{
+  border:none;
+  background:#f3f6ff;
+  color:#2346c8;
+  padding:14px 20px;
+  border-radius:16px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* =======================
+   DIAS
+======================= */
+
+.weekdays{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  margin-bottom:10px;
+  text-align:center;
+  color:#2563eb;
+  font-weight:600;
+}
+
+.weekdays div{
+  padding:12px;
+}
+
+.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.day{
+  height:110px;
+  border-right:1px solid #e5e7eb;
+  border-bottom:1px solid #e5e7eb;
+  padding:14px;
+  position:relative;
+  cursor:pointer;
+  background:#fff;
+}
+
+.day:hover{
+  background:#f8fbff;
+}
+
+.day:nth-child(7n){
+  border-right:none;
+}
+
+.day-number{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.selected .day-number{
+  background:#2563eb;
+  color:#fff;
+}
+
+.inactive{
+  color:#bdbdbd;
+}
+
+.dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#3454ff;
+  position:absolute;
+  bottom:14px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/* =======================
+   SIDEBAR
+======================= */
+
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.event-card{
+  background:linear-gradient(180deg,#1836a8,#2e49d8);
+  border-radius:28px;
+  padding:18px;
+  color:#fff;
+}
+
+.selected-date small{
+  opacity:.8;
+  display:block;
+  margin-bottom:4px;
+}
+
+.selected-date h2{
+  font-size:38px;
+  margin-bottom:18px;
+}
+
+.event-content{
+  background:#fff;
+  border-radius:24px;
+  color:#111827;
+  padding:28px 22px;
+  text-align:center;
+}
+
+.event-icon{
+  width:78px;
+  height:78px;
+  margin:auto;
+  border-radius:22px;
+  background:#e8eaff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  color:#3045d8;
+  margin-bottom:18px;
+}
+
+.event-title{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.event-name{
+  color:#3454ff;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.event-time{
+  color:#6b7280;
+  margin-bottom:22px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.btn{
+  border:none;
+  padding:14px 20px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.btn-primary{
+  background:#2563eb;
+  color:#fff;
+}
+
+.btn-danger{
+  background:#fff;
+  color:#ef4444;
+  border:2px solid #ef4444;
+}
+
+/* =======================
+   RESUMEN
+======================= */
+
+.summary{
+  background:#dce9ff;
+  border-radius:28px;
+  padding:24px;
+}
+
+.summary h3{
+  color:#1e3a8a;
+  margin-bottom:16px;
+}
+
+.line{
+  width:100%;
+  height:1px;
+  background:#9db9ff;
+  margin-bottom:24px;
+}
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.summary-box{
+  background:#fff;
+  border-radius:22px;
+  padding:28px;
+  text-align:center;
+}
+
+.summary-box h1{
+  color:#2438b8;
+  font-size:48px;
+  margin-bottom:8px;
+}
+
+/* =======================
+   MODAL
+======================= */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.modal{
+  width:420px;
+  background:#fff;
+  border-radius:24px;
+  padding:28px;
+}
+
+.modal h2{
+  margin-bottom:22px;
+  color:#1e3a8a;
+}
+
+.modal-group{
+  margin-bottom:18px;
+}
+
+.modal-group label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.modal-group input{
+  width:100%;
+  padding:14px;
+  border:1px solid #d1d5db;
+  border-radius:14px;
+  outline:none;
+  font-size:15px;
+}
+
+.modal-buttons{
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+  margin-top:12px;
+}
+
+.modal-btn{
+  border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.cancel-btn{
+  background:#eef2ff;
+  color:#1e3a8a;
+}
+
+.save-btn{
+  background:#2563eb;
+  color:#fff;
+}
+
+.footer{
+  text-align:center;
+  margin-top:18px;
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media(max-width:1100px){
+
+  .container{
+    grid-template-columns:1fr;
+  }
+
+}
