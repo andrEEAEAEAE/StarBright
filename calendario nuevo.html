@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="calendario.css">
+  <title>Calendario Academia</title>
+</head>
+ 
+<body>
+ 
+<div class="container">
+ 
+  <!-- CALENDARIO -->
+ 
+  <div class="calendar-wrapper">
+ 
+    <div class="calendar-header">
+ 
+      <div class="header-left">
+ 
+        <button class="nav-btn" id="prevBtn">
+          ‹
+        </button>
+ 
+        <button class="nav-btn" id="nextBtn">
+          ›
+        </button>
+ 
+        <h1 class="month-title" id="monthYear">
+          Marzo 2026
+        </h1>
+ 
+      </div>
+ 
+      <button class="today-btn" id="todayBtn">
+        Hoy
+      </button>
+ 
+    </div>
+ 
+    <div class="weekdays">
+      <div>Dom</div>
+      <div>Lun</div>
+      <div>Mar</div>
+      <div>Mié</div>
+      <div>Jue</div>
+      <div>Vie</div>
+      <div>Sáb</div>
+    </div>
+ 
+    <div class="calendar-grid" id="calendar"></div>
+ 
+    <div class="footer">
+      © 2026 Tu Academia. Todos los derechos reservados.
+    </div>
+ 
+  </div>
+ 
+  <!-- SIDEBAR -->
+ 
+  <div class="sidebar">
+ 
+    <div class="event-card">
+ 
+      <div class="selected-date">
+        <small>Seleccionado</small>
+ 
+        <h2 id="selectedDateText">
+          15 de Marzo
+        </h2>
+      </div>
+ 
+      <div class="event-content">
+ 
+        <div class="event-icon">
+          ☆
+        </div>
+ 
+        <div class="event-title">
+          Estado
+        </div>
+ 
+        <div class="event-name" id="eventName">
+          Sin clases programadas
+        </div>
+ 
+        <div class="event-time" id="eventTime">
+          No hay eventos agendados
+        </div>
+ 
+        <div class="buttons">
+ 
+          <button class="btn btn-primary"
+            id="newClassBtn">
+            + Agregar
+          </button>
+ 
+          <button class="btn btn-danger"
+            id="deleteBtn">
+            🗑 Eliminar
+          </button>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+    <!-- RESUMEN -->
+ 
+    <div class="summary">
+ 
+      <h3>Resumen del Mes</h3>
+ 
+      <div class="line"></div>
+ 
+      <div class="summary-grid">
+ 
+        <div class="summary-box">
+          <h1 id="classesCount">0</h1>
+          <p>Clases</p>
+        </div>
+ 
+        <div class="summary-box">
+          <h1 id="eventsCount">0</h1>
+          <p>Eventos</p>
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+</div>
+ 
+<!-- MODAL -->
+ 
+<div class="modal-overlay" id="modalOverlay">
+ 
+  <div class="modal">
+ 
+    <h2>Nueva Clase</h2>
+ 
+    <div class="modal-group">
+ 
+      <label>Nombre de la clase</label>
+ 
+      <input type="text"
+        id="classNameInput">
+ 
+    </div>
+ 
+    <div class="modal-group">
+ 
+      <label>Horario</label>
+ 
+      <input type="text"
+        id="classTimeInput">
+ 
+    </div>
+ 
+    <div class="modal-buttons">
+ 
+      <button class="modal-btn cancel-btn"
+        id="closeModal">
+        Cancelar
+      </button>
+ 
+      <button class="modal-btn save-btn"
+        id="saveEvent">
+        Guardar
+      </button>
+ 
+    </div>
+ 
+  </div>
+ 
+</div>
+ 
+<script>
+ 
+/* =======================
+   DATOS
+======================= */
+ 
+const months = [
+  "Enero","Febrero","Marzo","Abril",
+  "Mayo","Junio","Julio","Agosto",
+  "Septiembre","Octubre","Noviembre","Diciembre"
+];
+ 
+let currentDate = new Date(2026,2,15);
+ 
+const events = {};
+ 
+/* =======================
+   CALENDARIO
+======================= */
+ 
+function renderCalendar(){
+ 
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+ 
+  document.getElementById("monthYear")
+    .innerText = `${months[month]} ${year}`;
+ 
+  const calendar =
+    document.getElementById("calendar");
+ 
+  calendar.innerHTML = "";
+ 
+  const firstDay =
+    new Date(year,month,1).getDay();
+ 
+  const lastDate =
+    new Date(year,month+1,0).getDate();
+ 
+  const prevLastDate =
+    new Date(year,month,0).getDate();
+ 
+  const totalCells = 35;
+ 
+  for(let i = firstDay; i > 0; i--){
+ 
+    const div = document.createElement("div");
+ 
+    div.className = "day inactive";
+ 
+    div.innerHTML =
+      `<div class="day-number">
+        ${prevLastDate - i + 1}
+      </div>`;
+ 
+    calendar.appendChild(div);
+ 
+  }
+ 
+  for(let day = 1; day <= lastDate; day++){
+ 
+    const div = document.createElement("div");
+ 
+    div.className = "day";
+ 
+    const key =
+      `${year}-${month+1}-${day}`;
+ 
+    const hasEvent = events[key];
+ 
+    if(
+      day === currentDate.getDate() &&
+      month === currentDate.getMonth()
+    ){
+      div.classList.add("selected");
+    }
+ 
+    div.innerHTML = `
+      <div class="day-number">${day}</div>
+      ${hasEvent ? '<div class="dot"></div>' : ''}
+    `;
+ 
+    div.addEventListener("click",()=>{
+ 
+      currentDate =
+        new Date(year,month,day);
+ 
+      renderCalendar();
+      updateEventCard();
+ 
+    });
+ 
+    calendar.appendChild(div);
+ 
+  }
+ 
+}
+ 
+/* =======================
+   EVENT CARD
+======================= */
+ 
+function updateEventCard(){
+ 
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth();
+  const year = currentDate.getFullYear();
+ 
+  document.getElementById(
+    "selectedDateText"
+  ).innerText =
+    `${day} de ${months[month]}`;
+ 
+  const key =
+    `${year}-${month+1}-${day}`;
+ 
+  const event = events[key];
+ 
+  if(event){
+ 
+    document.getElementById("eventName")
+      .innerText = event.title;
+ 
+    document.getElementById("eventTime")
+      .innerText = event.time;
+ 
+  }else{
+ 
+    document.getElementById("eventName")
+      .innerText = "Sin clases programadas";
+ 
+    document.getElementById("eventTime")
+      .innerText = "No hay eventos agendados";
+ 
+  }
+ 
+  updateSummary();
+ 
+}
+ 
+/* =======================
+   RESUMEN
+======================= */
+ 
+function updateSummary(){
+ 
+  const total =
+    Object.keys(events).length;
+ 
+  document.getElementById(
+    "classesCount"
+  ).innerText = total;
+ 
+  document.getElementById(
+    "eventsCount"
+  ).innerText = total;
+ 
+}
+ 
+/* =======================
+   NAVEGACION
+======================= */
+ 
+document.getElementById("prevBtn")
+.addEventListener("click",()=>{
+ 
+  currentDate.setMonth(
+    currentDate.getMonth() - 1
+  );
+ 
+  renderCalendar();
+  updateEventCard();
+ 
+});
+ 
+document.getElementById("nextBtn")
+.addEventListener("click",()=>{
+ 
+  currentDate.setMonth(
+    currentDate.getMonth() + 1
+  );
+ 
+  renderCalendar();
+  updateEventCard();
+ 
+});
+ 
+document.getElementById("todayBtn")
+.addEventListener("click",()=>{
+ 
+  currentDate = new Date();
+ 
+  renderCalendar();
+  updateEventCard();
+ 
+});
+ 
+/* =======================
+   MODAL
+======================= */
+ 
+const modalOverlay =
+  document.getElementById("modalOverlay");
+ 
+const closeModal =
+  document.getElementById("closeModal");
+ 
+const saveEvent =
+  document.getElementById("saveEvent");
+ 
+const classNameInput =
+  document.getElementById("classNameInput");
+ 
+const classTimeInput =
+  document.getElementById("classTimeInput");
+ 
+/* ABRIR */
+ 
+document.getElementById("newClassBtn")
+.addEventListener("click",()=>{
+ 
+  modalOverlay.style.display = "flex";
+ 
+});
+ 
+/* CERRAR */
+ 
+closeModal.addEventListener("click",()=>{
+ 
+  modalOverlay.style.display = "none";
+ 
+});
+ 
+/* CERRAR AFUERA */
+ 
+modalOverlay.addEventListener("click",(e)=>{
+ 
+  if(e.target === modalOverlay){
+ 
+    modalOverlay.style.display = "none";
+ 
+  }
+ 
+});
+ 
+/* GUARDAR */
+ 
+saveEvent.addEventListener("click",()=>{
+ 
+  const title =
+    classNameInput.value.trim();
+ 
+  const time =
+    classTimeInput.value.trim();
+ 
+  if(!title || !time) return;
+ 
+  const key =
+    `${currentDate.getFullYear()}-${
+      currentDate.getMonth()+1
+    }-${currentDate.getDate()}`;
+ 
+  events[key] = {
+    title,
+    time
+  };
+ 
+  classNameInput.value = "";
+  classTimeInput.value = "";
+ 
+  modalOverlay.style.display = "none";
+ 
+  renderCalendar();
+  updateEventCard();
+ 
+});
+ 
+/* ELIMINAR */
+ 
+document.getElementById("deleteBtn")
+.addEventListener("click",()=>{
+ 
+  const key =
+    `${currentDate.getFullYear()}-${
+      currentDate.getMonth()+1
+    }-${currentDate.getDate()}`;
+ 
+  delete events[key];
+ 
+  renderCalendar();
+  updateEventCard();
+ 
+});
+ 
+/* INIT */
+ 
+renderCalendar();
+updateEventCard();
+ 
+</script>
+ 
+</body>
+</html>
