@@ -37,47 +37,50 @@
     <div class="formulario">
     <form action="#" method="post">
         <br>
-        <input type="email" class="form-control" placeholder="E-mail" required><br>
+        <input type="email" id="email" class="form-control" placeholder="E-mail" required><br>
         
         <div class="row">
          <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Nombre" required><br>
+          <input type="text" id="nombre" class="form-control" placeholder="Nombre" required><br>
          </div>
          <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Apellido" required> <br>
+          <input type="text" id="apellido" class="form-control" placeholder="Apellido" required> <br>
          </div>
         </div>
+
+        <input type="password" id="password" class="form-control" placeholder="Contraseña" required> <br>
         
-        <input type="tel" class="form-control" placeholder="Teléfono"><br>
+        <input type="tel" id="telefono" class="form-control" placeholder="Teléfono"><br>
 
         <label>Fecha de nacimiento:</label>
-        <input type="date" class="form-control"  name="Fecha_nacimiento"> <br>
+        <input type="date" id="nacimiento" class="form-control"  name="Fecha_nacimiento"> <br>
 
         <div class="row">
           <div class="col-md-6">
-          <input type="text" class="form-control"  placeholder="Especialización en docencia">
+          <input type="text" id="especializacion" class="form-control"  placeholder="Especialización en docencia">
           </div>
         <div class="col-md-6">
-          <input type="text" class="form-control"  placeholder="Títulos">
+          <input type="text" id="titulos" class="form-control"  placeholder="Títulos">
         </div>
         </div><br>
 
         <div class="row">
          <div class="col-md-6">
-            <select class="form-select" name="Modalidad_preferida">
+            <select id="modalidad" class="form-select" name="Modalidad_preferida">
             <option selected>Modalidad preferida</option>
             <option>Presencial</option>
             <option>Online</option>
             </select>
          </div>
          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Años laborando">
+            <input type="text" id="laburo" class="form-control" placeholder="Años laborando">
          </div>
         </div> 
         <br>
-       <button type="submit" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
+       <button type="button" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
     </form>
     </div>
-    
+ 
+<script type="module" src="registro-profesor.js"></script>    
 </body>
 </html>

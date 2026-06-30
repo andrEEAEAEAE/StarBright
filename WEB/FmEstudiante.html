@@ -37,20 +37,22 @@
     <div class="formulario">
     <form action="#" method="post">
         <br>
-        <input type="email" class="form-control" placeholder="E-mail" required><br>
+        <input type="email" id="email" class="form-control" placeholder="E-mail" required><br>
         
         <div class="row">
          <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Nombre" required><br>
+          <input type="text"id="nombre"  class="form-control" placeholder="Nombre" required><br>
          </div>
          <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Apellido" required> <br>
+          <input type="text" id="apellido" class="form-control" placeholder="Apellido" required> <br>
          </div>
         </div>
-        
-        <input type="tel" class="form-control" placeholder="Teléfono"><br>
 
-        <select class="form-select" placeholder="Distrito">
+        <input type="password" id="password" class="form-control" placeholder="Contraseña" required> <br>
+        
+        <input type="tel" id="telefono" class="form-control" placeholder="Teléfono"><br>
+
+        <select id="distrito" class="form-select" placeholder="Distrito">
          <option selected>Distrito</option>
             <option>Atalaya</option>
             <option>Calobre</option>
@@ -68,7 +70,7 @@
 
         <div class="row">
          <div class="col-md-6">
-            <select class="form-select" placeholder="Grado o nivel escolar">
+            <select id="grado" class="form-select" placeholder="Grado o nivel escolar">
             <option selected>Grado o nivel escolar</option>
             <option>Premedia</option>
             <option>Media</option>
@@ -76,14 +78,15 @@
             </select>
          </div>
          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Institucion educativa">
+            <input type="text" id="institucion" class="form-control" placeholder="Institucion educativa">
          </div>
         </div> 
         <br>
-        <button type="submit" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
+        <button type="button" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
     </form>
     </div>
     </div>
 
+<script type="module" src="registro-estudiante.js"></script>    
 </body>
 </html>
