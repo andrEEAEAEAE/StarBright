@@ -13,6 +13,8 @@ document.getElementById("btnRegistro").addEventListener("click", async () => {
   const titulos = document.getElementById("titulos").value;
   const modalidad = document.getElementById("modalidad").value;
   const laburo = document.getElementById("laburo").value;
+  const tarifa = document.getElementById("tarifa").value;
+  const descripcion = document.getElementById("descripcion").value;
 
   try {
     // 1. Crea la cuenta en Firebase Authentication
@@ -30,7 +32,9 @@ document.getElementById("btnRegistro").addEventListener("click", async () => {
       especializacion: especializacion,
       titulos: titulos,
       modalidad: modalidad,
-      laburo: laburo
+      laburo: laburo,
+      tarifa: tarifa,
+      descripcion: descripcion
     });
 
     alert("¡Registro exitoso! Bienvenido/a a TutorNow 🎉");

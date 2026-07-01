@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Tutor | TutorMatch</title>
+    <link rel="stylesheet" href="PERF.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+<div class="background-blur uno"></div>
+<div class="background-blur dos"></div>
+<div class="perfil">
+    <div class="banner">
+        <button class="btn-report" id="abrirModal">
+            <i class="fa-solid fa-flag"></i>
+            Denunciar
+        </button>
+    </div>
+    <div class="contenido">
+        <img src="img/perfil.jpg" class="foto">
+        <div class="cabecera">
+            <div>
+                <h1 id="nombreCompleto">Juan Pérez</h1>
+                <p class="profesion" id="profesion">
+                 Tutor de Matemáticas
+                </p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span>4.9 (126 reseñas)</span>
+                </div>
+                <p class="ubicacion" id="ubicacion">
+                    <i class="fa-solid fa-location-dot"></i><span id="ubicacionTexto">Panamá</span>
+                </p>
+            </div>
+            <div class="acciones">
+                <button class="btn-outline">
+                    <i class="fa-solid fa-user-pen"></i>
+                    Editar Perfil
+                </button>
+                <button class="btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Contactar
+                </button>
+            </div>
+        </div>
+        <div class="chips">
+            <span>Álgebra</span>
+            <span>Cálculo</span>
+            <span>Física</span>
+            <span>Programación</span>
+            <span>HTML</span>
+            <span>CSS</span>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Experiencia</h3>
+                <p id="experienciaCard">4 años</p>
+            </div>  
+        </div>
+        <section class="about">
+            <h2>Acerca del tutor</h2>
+            <p>
+                Soy estudiante de Ingeniería en Sistemas y llevo varios años
+                ayudando a estudiantes de secundaria y universidad en
+                Matemáticas, Física y Programación. Me gusta explicar con
+                ejemplos prácticos y adaptarme al ritmo de cada alumno.
+            </p>
+        </section>
+        <section class="reviews">
+            <h2>Opiniones</h2>
+            <div class="review">
+                <strong>María López</strong>
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>
+                    Excelente tutor. Explica de manera muy clara.
+                </p>
+            </div>
+            <div class="review">
+                <strong>Carlos Gómez</strong>
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>
+                    Muy paciente y siempre responde las dudas.
+                </p>
+             </div>
+        </section>
+    </div>
+</div>
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2>
+         🚩 Denunciar tutor
+        </h2>
+        <label>
+            Motivo
+        </label>
+        <select>
+            <option>Información falsa</option>
+            <option>Spam</option>
+            <option>Acoso</option>
+            <option>Lenguaje ofensivo</option>
+            <option>Otro</option>
+        </select>
+        <textarea
+        placeholder="Describe el problema..."></textarea>
+        <div class="modal-buttons">
+            <button id="cerrarModal"
+            class="btn-outline">
+                Cancelar
+            </button>
+            <button class="btn-danger">
+                Enviar denuncia
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    // ==============================
+// ELEMENTOS
+// ==============================
+
+const modal = document.getElementById("modal");
+const abrirModal = document.getElementById("abrirModal");
+const cerrarModal = document.getElementById("cerrarModal");
+const perfil = document.querySelector(".perfil");
+
+// ==============================
+// ABRIR MODAL
+// ==============================
+
+abrirModal.addEventListener("click", () => {
+
+    modal.style.display = "flex";
+
+});
+
+// ==============================
+// CERRAR MODAL
+// ==============================
+
+cerrarModal.addEventListener("click", () => {
+
+    modal.style.display = "none";
+
+});
+
+// ==============================
+// CERRAR AL DAR CLIC AFUERA
+// ==============================
+
+window.addEventListener("click", (e) => {
+
+    if(e.target === modal){
+
+        modal.style.display = "none";
+
+    }
+
+});
+
+// ==============================
+// ESC PARA CERRAR
+// ==============================
+
+document.addEventListener("keydown", (e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.style.display = "none";
+
+    }
+
+});
+
+// ==============================
+// ANIMACIÓN AL CARGAR
+// ==============================
+
+window.addEventListener("load", ()=>{
+
+    perfil.style.opacity = "0";
+    perfil.style.transform = "translateY(40px)";
+
+    setTimeout(()=>{
+
+        perfil.style.transition = ".7s ease";
+
+        perfil.style.opacity = "1";
+        perfil.style.transform = "translateY(0px)";
+
+    },150);
+
+});
+</script>
+<script type="module" src="perfil-publico.js"></script>
+</body>
+</html>

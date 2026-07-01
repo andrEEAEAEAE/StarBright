@@ -49,8 +49,15 @@
         </div>
 
         <input type="password" id="password" class="form-control" placeholder="Contraseña" required> <br>
-        
-        <input type="tel" id="telefono" class="form-control" placeholder="Teléfono"><br>
+         
+        <div class="row">
+            <div class="col-md-6">
+            <input type="tel" id="telefono" class="form-control" placeholder="Teléfono"><br>
+            </div>
+            <div class="col-md-6">
+            <input type="text" id="tarifa" class="form-control"  placeholder="Tarifa"> <br>
+            </div>
+        </div>
 
         <label>Fecha de nacimiento:</label>
         <input type="date" id="nacimiento" class="form-control"  name="Fecha_nacimiento"> <br>
@@ -76,6 +83,8 @@
             <input type="text" id="laburo" class="form-control" placeholder="Años laborando">
          </div>
         </div> 
+        <br>
+        <textarea id="descripcion" class="form-control" placeholder="Escribe una breve descripción sobre ti y tu experiencia como tutor..." rows="4"></textarea>
         <br>
        <button type="button" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
     </form>
