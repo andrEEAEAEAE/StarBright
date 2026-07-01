@@ -1,75 +1,67 @@
-import { db } from "./firebase-config.js";
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+const buscador = document.getElementById("buscador");
+const buscadorMateria = document.getElementById("buscadorMateria");
+const filtroPrecio = document.getElementById("filtroPrecio");
 
 const contenedor = document.getElementById("contenedor-cards");
+const tarjetas = Array.from(contenedor.querySelectorAll(".tarjeta"));
 
-async function cargarProfesores() {
-  const snapshot = await getDocs(collection(db, "usuarios"));
+function aplicarFiltros() {
 
-  snapshot.forEach((doc) => {
-    const datos = doc.data();
-    if (datos.rol !== "profesor") return;
+    const textoNombre = buscador.value.toLowerCase().trim();
+    const textoMateria = buscadorMateria.value.toLowerCase().trim();
 
-    const card = `
-      <div class="col">
-        <a href="perfilpublico.html?uid=${doc.id}" class="text-decoration-none text-dark">
-          <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
-            <img src="${datos.foto || 'img/LOGO_WEB-removebg-preview.png'}"
-                 class="rounded-circle mx-auto d-block mb-3"
-                 width="100" height="100"
-                 style="object-fit: cover;">
-            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95,95,95,0.911);">
-              ${datos.nombre} ${datos.apellido}
-            </h5>
-            <p class="materia text-muted text-center small mb-2">
-              ${datos.especializacion || "Sin especialización"}
-            </p>
-            <div class="text-center mb-3">
-              <small class="precio text-success">${datos.tarifa || "Tarifa no especificada"}</small>
-            </div>
-            <p class="small text-muted text-center mb-0">
-              ${datos.descripcion || "Sin descripción"}
-            </p>
-          </div>
-        </a>
-      </div>
-    `;
+    tarjetas.forEach(tarjeta => {
 
-    contenedor.innerHTML += card;
-  });
+        const nombre = tarjeta.querySelector(".nombre-persona")
+            .textContent.toLowerCase();
 
-  // ======= FILTROS (aquí dentro, después de cargar) =======
+        const materia = tarjeta.querySelector(".materia")
+            .textContent.toLowerCase();
 
-  const filtro = document.getElementById("filtroPrecio");
-  filtro.addEventListener("change", () => {
-    const cards = Array.from(contenedor.querySelectorAll(".col"));
-    cards.sort((a, b) => {
-      const precioA = Number(a.querySelector(".precio").textContent.replace(/[^\d.]/g, ""));
-      const precioB = Number(b.querySelector(".precio").textContent.replace(/[^\d.]/g, ""));
-      if (filtro.value === "barato") return precioA - precioB;
-      if (filtro.value === "caro") return precioB - precioA;
-      return 0;
+        const coincideNombre = nombre.includes(textoNombre);
+        const coincideMateria = materia.includes(textoMateria);
+
+        tarjeta.style.display =
+            coincideNombre && coincideMateria ? "" : "none";
     });
-    cards.forEach(card => contenedor.appendChild(card));
-  });
 
-  const buscadorMateria = document.getElementById("buscadorMateria");
-  buscadorMateria.addEventListener("input", function () {
-    const texto = this.value.toLowerCase();
-    contenedor.querySelectorAll(".col").forEach(card => {
-      const materia = card.querySelector(".materia").textContent.toLowerCase();
-      card.style.display = materia.includes(texto) ? "" : "none";
-    });
-  });
-
-  const buscador = document.getElementById("buscador");
-  buscador.addEventListener("input", function () {
-    const texto = this.value.toLowerCase();
-    contenedor.querySelectorAll(".col").forEach(card => {
-      const nombre = card.querySelector(".nombre-persona").textContent.toLowerCase();
-      card.style.display = nombre.includes(texto) ? "" : "none";
-    });
-  });
+    ordenarTarjetas();
 }
 
-cargarProfesores();
+function ordenarTarjetas() {
+
+    const opcion = filtroPrecio.value;
+
+    if (opcion === "ninguno") return;
+
+    const visibles = tarjetas.filter(t => t.style.display !== "none");
+
+    visibles.sort((a, b) => {
+
+        const precioA = parseFloat(
+            a.querySelector(".precio")
+             .textContent.replace("$", "")
+             .replace("/hr", "")
+        );
+
+        const precioB = parseFloat(
+            b.querySelector(".precio")
+             .textContent.replace("$", "")
+             .replace("/hr", "")
+        );
+
+        return opcion === "barato"
+            ? precioA - precioB
+            : precioB - precioA;
+    });
+
+    visibles.forEach(tarjeta => {
+        contenedor.appendChild(tarjeta);
+    });
+}
+
+buscador.addEventListener("input", aplicarFiltros);
+
+buscadorMateria.addEventListener("input", aplicarFiltros);
+
+filtroPrecio.addEventListener("change", aplicarFiltros);
