@@ -155,7 +155,7 @@ form .username{
     text-decoration: underline;
     color: #211ee9;
 }
-input[type="submit"]{
+#btnLogin{
     position: relative;
     width: 80%;
     height: 53px;
@@ -170,7 +170,7 @@ input[type="submit"]{
     box-shadow:0px 6px 10px rgba(135, 136, 153, 0.63);
     border: none;
 }
-input[type="submit"]:hover{
+#btnLogin:hover{
     transform: scale(1.1);
     transition: .2s;
 }
