@@ -1,10 +1,10 @@
 body{
-    font-family: sans-serif;
     background: rgb(252, 252, 252);
 }
 .navbar {
     background-color: #f8f9fb !important; 
     padding: 10px 20px;
+    font-family: "Inter", sans-serif;
 }
 
 /*links normales color y eso*/
@@ -58,6 +58,9 @@ body{
 }
 
 /*CSS DEL OFFCANVAS*/
+.offcanvas{
+    font-family: "Inter", sans-serif;
+}
 /*el título que va dentro del offcanvas*/
 .offcanvas-title{
     font-size: 28px;

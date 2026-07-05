@@ -1,6 +1,5 @@
-/*body del calendario, supongo q no afecta el navbar*/
 body{
-    font-family: sans-serif;
+    font-family: "Inter",sans-serif;
     margin: 0;
     padding: 0;
     background: #eef2f7;

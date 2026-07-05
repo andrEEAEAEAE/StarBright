@@ -1,0 +1,128 @@
+body{
+    background: rgb(252, 252, 252);
+}
+.navbar {
+    background-color: #f8f9fb !important; 
+    padding: 10px 20px;
+    font-family: "Inter", sans-serif;
+}
+
+/*links normales color y eso*/
+.navbar-brand{
+    cursor: default;
+}
+.nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background:rgba(163, 199, 252, 0.596);
+    border-radius: 12px;
+    padding: 6px 12px;  
+
+}
+
+/*link activo degradado CUANDO PRESIONAS LOS NAV-LINKS*/
+.nav-link.active {
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144, 198, 252));  
+    border-radius: 12px;
+    color: white !important;
+    padding: 6px 12px;
+}
+
+/*degradado del logotipo*/
+.gradient-text {
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*ícono del perfil. No sé si dsp la cambio permitiendo al usuario mostrar su propia foto de perfil envés de solo un ícono. Por meintras, es esto*/
+.profile-icon {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    color: #6c757d;
+    transition: 0.3s;
+}
+.profile-icon:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/*CSS DEL OFFCANVAS*/
+.offcanvas{
+    font-family: "Inter", sans-serif;
+}
+/*el título que va dentro del offcanvas*/
+.offcanvas-title{
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+/*esto hace que el offcanvas tenga una transición lenta al momento de abrirlo*/
+#menuLateral {
+transition: 300ms;
+width: 300px;
+}  
+/*esto es para el ícono del offcanvas*/
+.list-icon:hover{
+    color: #0d6efd;
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+/*editar las opciones para que se vean como el navbar*/
+.offcanvas-link{
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 17px;
+}
+.offcanvas-link:hover{
+    color: #0d6efd;
+}
+/*link activo para cuando presiones salga el cuadrito de color en offcanvas (igual que en el navbar)*/
+.offcanvas-link.active {
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144, 198, 252));  
+    border-radius: 14px;
+    color: white !important;
+    padding: 6px 12px;
+}
+/*ícono de cerrar sesión*/
+.offcanvas-footer{
+    position: absolute;
+    bottom: 40px;
+    left: 35px;
+}
+
+/*CSS DE LOS DROPDOWNS*/
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+#dropdown-perfil{
+    width: 250px;
+    height: 160px;
+}
+#FotoPerfilDrop{
+    font-size: 30px;
+}
+#NombrePerfilDrop{
+    font-size: 15px;
+}
+#dropdown-perfil .btn-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 12px;
+}

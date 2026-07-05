@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="calendario.css">
+    <link rel="stylesheet" href="Guardar.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>calendario</title>
+    <title>Favoritos</title>
 </head>
 <body>
   <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-   
+
     <!--BARRA LATERAL OFFCANVAS (cuidado con el style que le puse => 20px) El Span contiene el punto rojo que asemeja una notificación para alertar al usuario de revisarlo jajaj-->
     <button class="btn list-icon me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="font-size: 20px;">
       <i class="bi bi-list"> <span class="position-absolute top-1 p-1 bg-danger border border-light rounded-circle"></span></i>
@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item mx-2">
-          <a class="nav-link" aria-current="page" href="home.html"> 
+          <a class="nav-link active" aria-current="page" href="home.html"> 
             <i class="bi bi-house-door"></i>Inicio </a>
         </li>
         <li class="nav-item mx-2">
@@ -43,7 +43,7 @@
             <i class="bi bi-book"></i>Recursos</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link active" href="calendario.html">
+          <a class="nav-link" href="calendario.html">
             <i class="bi bi-calendar-week"></i>Mis tutorías</a>
         </li>
         <li class="nav-item mx-2">
@@ -91,7 +91,7 @@
 
   <div class="offcanvas-body">
     <ul class="list-unstyled">
-        
+       
         <li class="my-4 mx-3">
         <a href="#" class="offcanvas-link" data-bs-toggle="modal" data-bs-target="#notifModal" data-bs-dismiss="offcanvas">
          Notificaciones <i class="bi bi-bell ms-2"> </i> </a> </li>
@@ -138,7 +138,7 @@
           <li class="list-group-item d-flex align-items-start gap-3 py-3">
             <i class="bi bi-chat-left-text fs-4 text-success"></i>
             <div>
-              <p class="mb-1">Tienes un nuevo mensaje del Paula García.</p>
+              <p class="mb-1">Tienes un nuevo mensaje del Prof. García.</p>
               <small class="text-body-secondary">Ayer, 6:45 PM</small>
             </div>
          </li>
@@ -149,108 +149,11 @@
     </div>
   </div>
 </div>
-</section>
+</section> 
 
-<section>
-  <div class="calendario-page">
-  <div class="container">
-  <div class="calendar-wrapper">
-    <div class="calendar-header">
-      <div class="header-left">
-        <button class="nav-btn" id="prevBtn"> ‹ </button>
-        <button class="nav-btn" id="nextBtn"> › </button>
-        <h1 class="month-title" id="monthYear">
-          Marzo 2026
-        </h1>
-      </div>
-      <button class="today-btn" id="todayBtn">
-        Hoy
-      </button>
-    </div>
-    <div class="weekdays">
-      <div>Dom</div>
-      <div>Lun</div>
-      <div>Mar</div>
-      <div>Mié</div>
-      <div>Jue</div>
-      <div>Vie</div>
-      <div>Sáb</div>
-    </div>
-    <div class="calendar-grid" id="calendar"></div>
-  </div>
-  
-  <div class="sidebar">
-    <div class="event-card">
-      <div class="selected-date">
-        <h2 id="selectedDateText">
-          15 de marzo
-        </h2>
-      </div>
-      <div class="event-content">
-        <div class="event-icon">
-          <i class="bi bi-book-fill"></i>
-        </div>
-        <div class="event-name" id="eventName">
-          Sin clases programadas
-        </div>
-        <div class="event-time" id="eventTime">
-          No hay eventos agendados
-        </div>
-        <div class="buttons">
-          <button class="btn btn-primary"
-            id="newClassBtn">
-            + Agregar
-          </button>
-          <button class="btn btn-danger"
-            id="deleteBtn">
-            🗑 Eliminar
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="summary">
-      <h3>Resumen del mes</h3>
-      <div class="summary-grid">
-        <div class="summary-box">
-          <h1 id="classesCount">0</h1>
-          <p style="font-weight: 600;">Clases</p>
-        </div>
-        <div class="summary-box">
-          <i class="bi bi-calendar-check"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal-overlay" id="modalOverlay">
-  <div class="calendar-modal">
-    <h2>Nueva Clase</h2>
-    <div class="calendar-modal-group">
-      <label>Nombre de la clase</label>
-      <input type="text"
-        id="classNameInput">
-    </div>
-    <div class="calendar-modal-group">
-      <label>Horario</label>
-      <input type="time"
-        id="classTimeInput">
-    </div>
-    <div class="calendar-modal-buttons">
-      <button class="calendar-modal-btn cancel-btn"
-        id="closeModal">
-        Cancelar
-      </button>
-      <button class="calendar-modal-btn save-btn"
-        id="saveEvent">
-        Guardar
-      </button>
-    </div>
-  </div>
-</div>
-</div>
-</section>
 
-<script type="module" src="calendario.js"></script> 
+
+<!--ESTO ES UN SCRIPT PARA QUE CADA QUE SE PRESIONA UN LINK, SE ACTIVE EL COLOR EN ELLOS-->
 <script>
   const links = document.querySelectorAll(".nav-link");
 
@@ -265,6 +168,7 @@
     });
   });
 </script>
+<!--script para los links del offcanvas (es lo mismo q el navbar pero cambia la class)-->
 <script>
   const OffClinks = document.querySelectorAll(".offcanvas-link");
 
@@ -277,6 +181,25 @@
     });
   });
 </script>
+
+<!--SCRIPT DEL POP-UP-->
+<script>
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    window.onload = function () {
+        // Chequea si el popup ya se mostró en esta sesión
+        if (!sessionStorage.getItem("popupMostrado")) {
+            setTimeout(function () {
+                document.getElementById("popup").style.display = "flex";
+                sessionStorage.setItem("popupMostrado", "true");
+            }, 1000);
+        }
+    };
+</script>
+
+<!--SCRIPT DE BOOTSTRAP QUE ME PERMITE ABRIR EL MENÚ EN MODO CELULAR-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

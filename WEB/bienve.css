@@ -1,5 +1,5 @@
-body{
-    font-family: sans-serif;
+*{
+    font-family: "Inter",sans-serif;
 }
 #BtnInicio{
     border-radius: 20px;
@@ -10,7 +10,7 @@ body{
     font-weight: 500;
 }
 #BtnInicio:Hover{
-    transform: scale(1.07);
+    transform: scale(1.05);
     transition: 0.4s;
 }
 .brand-text{

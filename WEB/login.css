@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Inter",sans-serif;
     height: 100vh;
     overflow: hidden;
 }
@@ -162,7 +162,7 @@ form .username{
     border: 1px solid ;
     background-color: #563cca;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     cursor: pointer;
     left: 35px;
