@@ -124,47 +124,6 @@ width: 300px;
     font-size: 12px;
 }
 
-/*HEROOOOO*/
-body{
-    font-family: sans-serif;
-    cursor: default;
-}
-.frase{
-    font-size: 30px;
-    padding: 10px;
-}
-#social-link a{
-    padding-left: 10px;
-    padding-top: 6px;
-    padding-bottom: 4px;
-    color: #ffffff;
-    margin: 0 10px 10px 0;
-    min-height: 35px;
-    width: 45px;
-    background: conic-gradient(from 0deg at 50% 50%, #ff3b30, #ffd800, #ff007f, #ff3b30);
-    border-radius: 12px;
-    transition: all .5s ease;
-}
-#social-link:hover{
-    transform: scale(1.05);
-}
-.frase{
-    background: linear-gradient(40deg, rgb(54, 52, 212), rgb(144,198,252));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-weight: 600;
-}
-.btn.btn-primary{
-    border-radius: 20px;
-    background: linear-gradient(30deg, rgb(41, 39, 206), rgb(93, 136, 255));
-    border: none;
-}
-.btn.btn-primary:hover{
-    box-shadow: 0px 1px 20px 3px rgba(190, 190, 221, 0.801);
-    transform: scale(1.03);
-    transition: 0.3s;
-}
-
 /*barra de búsqueda*/
 .busqueda{
     position: relative;
