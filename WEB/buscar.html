@@ -59,7 +59,7 @@
             </li>
             <hr>
             <li class="dropdown-item">
-              <a href="EditPerfil.html" 
+              <a href="perfilpublico.html" 
               style="text-decoration: none; color: #5e6164; font-weight: 500;">
               <i class="bi bi-brush me-2"></i>Editar perfil </a>
             </li>
@@ -80,8 +80,9 @@
   </div>
   <div class="offcanvas-body">
     <ul class="list-unstyled">
-        <li class="my-4 mx-3"><a href="#" class="offcanvas-link"> Notificaciones
-        <i class="bi bi-bell ms-2"></i> </a> </li>
+        <li class="my-4 mx-3">
+        <a href="#" class="offcanvas-link" data-bs-toggle="modal" data-bs-target="#notifModal" data-bs-dismiss="offcanvas">
+         Notificaciones <i class="bi bi-bell ms-2"> </i> </a> </li>
         <li class="my-4 mx-3"><a href="notas.html" class="offcanvas-link">Mis notas
         <i class="bi bi-stickies ms-2"></i> </a> </li>
        <li class="my-4 mx-3"><a href="guardados.html" class="offcanvas-link">Favoritos
@@ -100,6 +101,39 @@
     </div>
   </div>
 </div>
+<!--MODAL DE NOTIFICACIONES-->
+<section>
+    <div class="modal fade" id="notifModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 20px;">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: #0d6efd; font-weight: 600;"><i class="bi bi-bell me-2"></i>Notificaciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-calendar-check fs-4 text-primary"></i>
+            <div>
+              <p class="mb-1" style="font-weight:600;">Tu tutoría de Matemáticas comienza en 1 hora.</p>
+              <small class="text-body-secondary">Hoy, 9:00 AM</small>
+            </div>
+          </li>
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-chat-left-text fs-4 text-success"></i>
+            <div>
+              <p class="mb-1">Tienes un nuevo mensaje del Paula García.</p>
+              <small class="text-body-secondary">Ayer, 6:45 PM</small>
+            </div>
+         </li>
+         <li class="list-group-item gap-3 py-3" style="border-radius: 20px;">
+         </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section> 
 
 <main>
   <div class="container px-4 py-5" id="custom-cards"> 
@@ -136,43 +170,217 @@
     
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 align-items-stretch g-4 py-5" id="contenedor-cards">
                     
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Grace Batista </h5>
+
+            <p class="materia text-muted text-center small mb-2">Lengua</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$10/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Yaslin Madrid </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$20/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Mary Toribio </h5>
+
+            <p class="materia text-muted text-center small mb-2">Artes</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$10/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Ana Hernandez </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$30/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Luis Urriola </h5>
+
+            <p class="materia text-muted text-center small mb-2">Contabilidad</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$95/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Erick Chong </h5>
+
+            <p class="materia text-muted text-center small mb-2">Lengua</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$35/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Andrea Quintero </h5>
+
+            <p class="materia text-muted text-center small mb-2">Historia</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$15/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Yesy Mendoza </h5>
+
+            <p class="materia text-muted text-center small mb-2">Quimica</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
        </div>
-       <div class="col"> 
-        
-       </div><div class="col"> 
-        
-       </div><div class="col"> 
-        
-       </div><div class="col"> 
+       <div class="col tarjeta"> 
         <a href="perfil.html?id=1" class="text-decoration-none text-dark">
         <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
             <img src="img/LOGO_WEB-removebg-preview.png"
@@ -193,6 +401,69 @@
         </div>
         </a>
        </div> 
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
+
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
         
 
     </div>

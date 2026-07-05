@@ -10,10 +10,30 @@
     <title>Home</title>
 </head>
 <body>
+    <div class="overlay" id="popup">
+        <div class="popup">
+            <button class="close" onclick="cerrarPopup()">✕</button>
+            
+            <img src="img/medalla.png" class="img-popupMed">
+            <img src="img/regalos.png" class="img-popupReg">
+            <img src="img/cupon.png" class="img-popupCup">
+             <img src="img/festejo.png" class="img-popupFes">
+
+            <div class="contenido">
+                <div class="texto">
+                    <br>
+                    <h2>¡Bienvenido!</h2>
+                    <p>Aprovecha el descuento en tus primeras <span class="gradient-text">tres</span> sesiones.
+                        ¡No te lo pierdas!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
   <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-   
+
     <!--BARRA LATERAL OFFCANVAS (cuidado con el style que le puse => 20px) El Span contiene el punto rojo que asemeja una notificación para alertar al usuario de revisarlo jajaj-->
     <button class="btn list-icon me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="font-size: 20px;">
       <i class="bi bi-list"> <span class="position-absolute top-1 p-1 bg-danger border border-light rounded-circle"></span></i>
@@ -93,8 +113,9 @@
   <div class="offcanvas-body">
     <ul class="list-unstyled">
        
-        <li class="my-4 mx-3"><a href="#" class="offcanvas-link"> Notificaciones
-        <i class="bi bi-bell ms-2"></i> </a> </li>
+        <li class="my-4 mx-3">
+        <a href="#" class="offcanvas-link" data-bs-toggle="modal" data-bs-target="#notifModal" data-bs-dismiss="offcanvas">
+         Notificaciones <i class="bi bi-bell ms-2"> </i> </a> </li>
         <li class="my-4 mx-3"><a href="notas.html" class="offcanvas-link">Mis notas
         <i class="bi bi-stickies ms-2"></i> </a> </li>
        <li class="my-4 mx-3"><a href="Guardados.html" class="offcanvas-link">Favoritos
@@ -117,7 +138,41 @@
     </div>
   </div>
 </div>
- 
+
+<!--MODAL DE NOTIFICACIONES-->
+<section>
+    <div class="modal fade" id="notifModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 20px;">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: #0d6efd; font-weight: 600;"><i class="bi bi-bell me-2"></i>Notificaciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-calendar-check fs-4 text-primary"></i>
+            <div>
+              <p class="mb-1" style="font-weight:600;">Tu tutoría de Matemáticas comienza en 1 hora.</p>
+              <small class="text-body-secondary">Hoy, 9:00 AM</small>
+            </div>
+          </li>
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-chat-left-text fs-4 text-success"></i>
+            <div>
+              <p class="mb-1">Tienes un nuevo mensaje del Prof. García.</p>
+              <small class="text-body-secondary">Ayer, 6:45 PM</small>
+            </div>
+         </li>
+         <li class="list-group-item gap-3 py-3" style="border-radius: 20px;">
+         </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section> 
+
 <main>
   <!--El hero-->
     <div class="container my-5"> 
@@ -252,8 +307,7 @@
     </div>
 
 
-
-<!--ESTO ES UN JAVA SCRIPT FUNCIONAL SACADO DE CHATGPT PARA QUE CADA QUE SE PRESIONA UN LINK, SE ACTIVE EL COLOR EN ELLOS-->
+<!--ESTO ES UN SCRIPT PARA QUE CADA QUE SE PRESIONA UN LINK, SE ACTIVE EL COLOR EN ELLOS-->
 <script>
   const links = document.querySelectorAll(".nav-link");
 
@@ -280,6 +334,23 @@
       this.classList.add("active");
     });
   });
+</script>
+
+<!--SCRIPT DEL POP-UP-->
+<script>
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    window.onload = function () {
+        // Chequea si el popup ya se mostró en esta sesión
+        if (!sessionStorage.getItem("popupMostrado")) {
+            setTimeout(function () {
+                document.getElementById("popup").style.display = "flex";
+                sessionStorage.setItem("popupMostrado", "true");
+            }, 2000);
+        }
+    };
 </script>
 
 <!--SCRIPT DE BOOTSTRAP QUE ME PERMITE ABRIR EL MENÚ EN MODO CELULAR-->

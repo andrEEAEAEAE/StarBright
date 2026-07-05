@@ -3,10 +3,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Cayuda.css">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CentroAyuda.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Centro de ayuda</title>
 </head>
 <body>
+ <header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <!--BARRA LATERAL OFFCANVAS (cuidado con el style que le puse => 20px) El Span contiene el punto rojo que asemeja una notificación para alertar al usuario de revisarlo jajaj-->
+    <button class="btn list-icon me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="font-size: 20px;">
+      <i class="bi bi-list"> <span class="position-absolute top-1 p-1 bg-danger border border-light rounded-circle"></span></i>
+    </button>
     
+    <!--ACÁ COMIENZA EL NAVBAR CON EL LOGO-->
+        <a class="navbar-brand" href="#">
+            <img src="img/LOGO_WEB-removebg-preview.png" alt="Logo" width="43" height="40" class="d-inline-block align-middle"><b class="gradient-text">TutorNow</b>
+        </a>  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--revisar el nav-link active para colocarlo también en todos y que al presionarlos se cambien de color y se activen (en el css) NECESITO JAVASCRIPT-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-2">
+          <a class="nav-link" aria-current="page" href="home.html"> 
+            <i class="bi bi-house-door"></i>Inicio </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="Buscar.html">
+            <i class="bi bi-people"></i>Tutores</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="IA.html"> 
+            <i class="bi bi-book"></i>Recursos</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="calendario.html">
+            <i class="bi bi-calendar-week"></i>Mis tutorías</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active" href="CentroAyuda.html">
+            <i class="bi bi-question-circle"></i>Más información</a>
+        </li>
+        
+        <!--ÍCONO DE PERFIL DEL NAVBAR-->
+        <li class="nav-item mx-2 dropdown">
+            <a class="nav-link profile-icon d-flex align-items-center" href="#" 
+            data-bs-toggle="dropdown"> <!--ESE PERFIL.HTML ES UN EJEMPLO-->
+              <i class="bi bi-person-circle"></i></a>
+
+        <!--lo modifiqué para que tuviera dropdown-->
+              <ul class="dropdown-menu dropdown-menu-end" id="dropdown-perfil">
+            <li class="text-end px-2 pt-1">
+              <button type="button" class="btn-close"></button>
+            </li>
+            <li>
+              <strong class="dropdown-header" id="NombrePerfilDrop">
+                <i class="bi bi-person me-2" id="FotoPerfilDrop"></i> Nombre
+              </strong>
+            </li>
+            <hr>
+            <li class="dropdown-item">
+              <a href="EditPerfil.html" 
+              style="text-decoration: none; color: #5e6164; font-weight: 500;">
+              <i class="bi bi-brush me-2"></i>Editar perfil </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>  
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header">
+    <button class="btn" data-bs-dismiss="offcanvas" style="font-size: 20px;">
+    <i class="bi bi-list"></i>
+  </button>
+    <h5 class="offcanvas-title ms-2">TutorNow</h5>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="list-unstyled">
+       
+        <li class="my-4 mx-3">
+        <a href="#" class="offcanvas-link" data-bs-toggle="modal" data-bs-target="#notifModal" data-bs-dismiss="offcanvas">
+         Notificaciones <i class="bi bi-bell ms-2"> </i> </a> </li>
+        <li class="my-4 mx-3"><a href="notas.html" class="offcanvas-link">Mis notas
+        <i class="bi bi-stickies ms-2"></i> </a> </li>
+       <li class="my-4 mx-3"><a href="Guardados.html" class="offcanvas-link">Favoritos
+        <i class="bi bi-bookmarks ms-2"></i> </a> </li>  
+       <li class="my-4 mx-3"><a href="chat.html" class="offcanvas-link">Mensajes
+        <i class="bi bi-chat-square-dots ms-2"></i> </a> </li>
+  <hr>
+      <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Modo de pago
+        <i class="bi bi-coin ms-2"></i> </a> </li>
+      <li class="my-4 mx-3"><a href="Políticas.html" class="offcanvas-link">Políticas
+        <i class="bi bi-shield-lock ms-2"></i> </a> </li>
+    </ul>
+    <!--EL MS QUE SE COLOCA AL FINAL DE CIERTAS CLASES COMO "MARGIN (M)". Después del M se coloca (S;E;X;Y) => Start, End, X axis, Y axis -->
+    
+    <!--Ícono de cerrar sesión-->
+    <div class="offcanvas-footer">
+      <a class="offcanvas-link" href="#"> Salir 
+        <i class="bi bi-box-arrow-left ms-2"></i> </a>
+
+    </div>
+  </div>
+</div>
+<section> 
+    <div class="modal fade" id="notifModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 20px;">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: #0d6efd; font-weight: 600;"><i class="bi bi-bell me-2"></i>Notificaciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-calendar-check fs-4 text-primary"></i>
+            <div>
+              <p class="mb-1" style="font-weight:600;">Tu tutoría de Matemáticas comienza en 1 hora.</p>
+              <small class="text-body-secondary">Hoy, 9:00 AM</small>
+            </div>
+          </li>
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-chat-left-text fs-4 text-success"></i>
+            <div>
+              <p class="mb-1">Tienes un nuevo mensaje de Paula García.</p>
+              <small class="text-body-secondary">Ayer, 6:45 PM</small>
+            </div>
+         </li>
+         <li class="list-group-item gap-3 py-3" style="border-radius: 20px;">
+         </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section> 
+
+<main>
+        <section class="hero-ayuda">
+        <div class="hero-content">
+            <span class="badge-ayuda">
+                <i class="bi bi-stars"></i>
+                Centro de Ayuda
+            </span>
+            <h1>
+                ¿En qué podemos ayudarte?
+            </h1>
+            <p>
+                Encuentra respuestas a las preguntas más frecuentes sobre TutorNow,
+                conoce cómo funciona la plataforma y resuelve cualquier duda de forma rápida.
+            </p>
+        </div>
+    </section>
+</main>
+    <!-- CATEGORÍAS -->
+    <section class="categorias">
+        <div class="container-ayuda">
+            <h2 class="titulo-seccion">
+                Explora por categorías
+            </h2>
+            <div class="cards-ayuda">
+
+                <!-- Cuenta -->
+                <a href="#cuenta-info" class="card-category-link">
+                <div class="card-ayuda">
+                    <div class="icono-card">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <h4>Cuenta y perfil</h4>
+                    <p>
+                        Aprende a administrar tu perfil, editar tus datos y configurar tu cuenta.
+                    </p>
+                </div>
+                </a>
+
+                <!-- Tutorías -->
+                <a href="#tutorias-info" class="card-category-link">
+                <div class="card-ayuda">
+                    <div class="icono-card">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <h4>Tutorías</h4>
+                    <p>
+                        Descubre cómo reservar, cancelar y gestionar tus tutorías fácilmente.
+                    </p>
+                </div>
+                </a>
+
+                <!-- Pagos -->
+                <a href="#pagos-info" class="card-category-link">
+                <div class="card-ayuda">
+                    <div class="icono-card">
+                        <i class="bi bi-credit-card"></i>
+                    </div>
+                    <h4>Pagos</h4>
+                    <p>
+                        Información sobre métodos de pago, reembolsos y facturación.
+                    </p>
+                </div>
+                </a>
+
+                <!-- Tutores -->
+                <a href="#tutores-info" class="card-category-link">
+                <div class="card-ayuda">
+                    <div class="icono-card">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h4>Tutores</h4>
+                    <p>
+                        Conoce cómo encontrar al tutor ideal y revisar su perfil.
+                    </p>
+                </div>
+                </a>
+
+                <!-- Seguridad -->
+                <a href="#seguridad-info" class="card-category-link">
+                <div class="card-ayuda">
+                    <div class="icono-card">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h4>Privacidad</h4>
+                    <p>
+                        Protegemos tu información y garantizamos un entorno seguro.
+                    </p>
+                </div>
+              </a>
+
+                <!-- Soporte -->
+                <a href="#soporte-info" class="card-category-link">
+                <div class="card-ayuda">
+                    <div class="icono-card">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <h4>Soporte</h4>
+                    <p>
+                        ¿Tienes un problema? Aquí encontrarás la mejor forma de contactarnos.
+                    </p>
+                </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+            <div class="container-preguntas">
+                <h3 class="section-title">Preguntas Frecuentes</h3>
+                <div class="faq-list">
+                    <div class="faq-item border-prim" id="tutores-info">
+                        <h4 class="faq-question text-prim">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Cómo encuentro un tutor disponible?
+                        </h4>
+                        <p class="faq-answer">
+                            Entras a la plataforma, escribes la materia o tema que necesitas en el buscador. Verás la lista de tutores conectados en ese momento, con su especialidad y calificación. Eliges el que prefieras y empiezas tu consulta al instante.
+                        </p>
+                    </div>
+                    <div class="faq-item border-second">
+                        <h4 class="faq-question text-second">
+                            <i class="bi bi-patch-question"></i>
+                            ¿A qué horarios hay ayuda disponible?
+                        </h4>
+                        <p class="faq-answer">
+                            Funcionamos las 24 horas, los 7 días de la semana. Sabemos que estudias hasta tarde o en fines de semana, por eso siempre hay tutores conectados, incluso en la madrugada, para ayudarte cuando lo necesites.
+                        </p>
+                    </div>
+                    <div class="faq-item border-prim">
+                        <h4 class="faq-question text-prim">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué materias y niveles cubren?
+                        </h4>
+                        <p class="faq-answer">
+                            Tenemos ayuda para premedia, media y universidad: matemáticas, física, química, biología, historia, idiomas, y también materias técnicas o específicas de carreras como contabilidad, programación o ingeniería.
+                        </p>
+                    </div>
+                        <div class="faq-item border-second">
+                        <h4 class="faq-question text-second">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si no entiendo la explicación?
+                        </h4>
+                        <p class="faq-answer">
+                            Nuestro objetivo es que aprendas. Si no te queda claro, puedes pedirle al tutor que lo explique de otra forma, con ejemplos o paso a paso. Si aun así no lo entiendes, puedes cambiar de tutor sin ningún problema.
+                        </p>
+                    </div>
+                    <div class="faq-item border-prim" id="seguridad-info">
+                        <h4 class="faq-question text-prim">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Es seguro usar la plataforma?
+                        </h4>
+                        <p class="faq-answer">
+                            Sí, totalmente. Todos los tutores pasan por revisión y verificación de conocimientos antes de entrar. Tus datos y conversaciones están protegidos y nunca se comparten con nadie más.
+                        </p>
+                    </div>
+                    <div class="faq-item border-second">
+                        <h4 class="faq-question text-second">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si tengo problemas técnicos?
+                        </h4>
+                        <p class="faq-answer">
+                            Si la página no carga o tienes problemas para conectarte, usa el formulario de contacto de abajo. Nuestro equipo revisa todo en el momento y te ayudará a solucionarlo rápido.
+                        </p>
+                    </div>
+                    <div class="faq-item border-prim">
+                        <h4 class="faq-question text-prim">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si tengo problemas técnicos?
+                        </h4>
+                        <p class="faq-answer">
+                            Si la página no carga o tienes problemas para conectarte, usa el formulario de contacto de abajo. Nuestro equipo revisa todo en el momento y te ayudará a solucionarlo rápido.
+                        </p>
+                    </div>
+                    <div class="faq-item border-second">
+                        <h4 class="faq-question text-second">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si tengo problemas técnicos?
+                        </h4>
+                        <p class="faq-answer">
+                            Si la página no carga o tienes problemas para conectarte, usa el formulario de contacto de abajo. Nuestro equipo revisa todo en el momento y te ayudará a solucionarlo rápido.
+                        </p>
+                    </div>
+                    <div class="faq-item border-prim">
+                        <h4 class="faq-question text-prim">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si tengo problemas técnicos?
+                        </h4>
+                        <p class="faq-answer">
+                            Si la página no carga o tienes problemas para conectarte, usa el formulario de contacto de abajo. Nuestro equipo revisa todo en el momento y te ayudará a solucionarlo rápido.
+                        </p>
+                    </div>
+                    <div class="faq-item border-second">
+                        <h4 class="faq-question text-second">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si tengo problemas técnicos?
+                        </h4>
+                        <p class="faq-answer">
+                            Si la página no carga o tienes problemas para conectarte, usa el formulario de contacto de abajo. Nuestro equipo revisa todo en el momento y te ayudará a solucionarlo rápido.
+                        </p>
+                    </div>
+                    <div class="faq-item border-prim">
+                        <h4 class="faq-question text-prim">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si tengo problemas técnicos?
+                        </h4>
+                        <p class="faq-answer">
+                            Si la página no carga o tienes problemas para conectarte, usa el formulario de contacto de abajo. Nuestro equipo revisa todo en el momento y te ayudará a solucionarlo rápido.
+                        </p>
+                    </div>
+                    <div class="faq-item border-second">
+                        <h4 class="faq-question text-second">
+                            <i class="bi bi-patch-question"></i>
+                            ¿Qué hago si tengo problemas técnicos?
+                        </h4>
+                        <p class="faq-answer">
+                            Si la página no carga o tienes problemas para conectarte, usa el formulario de contacto de abajo. Nuestro equipo revisa todo en el momento y te ayudará a solucionarlo rápido.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   <section class="section">
+            <div class="container-form">
+                <h3 class="section-title">¿Aún tienes dudas? Escríbenos</h3>
+                <div class="card gradient-light">
+                    <form class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Tu nombre</label>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Asunto</label>
+                            <input type="text" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tu mensaje</label>
+                            <textarea rows="4" class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn gradient-blue-purple">
+                                Enviar mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+<!--ESTO ES UN SCRIPT PARA QUE CADA QUE SE PRESIONA UN LINK, SE ACTIVE EL COLOR EN ELLOS-->
+<script>
+  const links = document.querySelectorAll(".nav-link");
+
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      // quitar active de todos
+      links.forEach(l => l.classList.remove("active"));
+      
+      // agregar active al que se clickeó
+      this.classList.add("active");
+    });
+  });
+</script>
+<!--script para los links del offcanvas (es lo mismo q el navbar pero cambia la class)-->
+<script>
+  const OffClinks = document.querySelectorAll(".offcanvas-link");
+
+  OffClinks.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      OffClinks.forEach(l => l.classList.remove("active"));
+      
+      this.classList.add("active");
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -474,3 +474,14 @@ width: 300px;
   }
 
 }
+
+#notifModal .modal-dialog {
+    transform: translateY(-50px);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    opacity: 0;
+}
+
+#notifModal.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}

@@ -52,44 +52,46 @@
          
         <div class="row">
             <div class="col-md-6">
-            <input type="tel" id="telefono" class="form-control" placeholder="Teléfono"><br>
+            <input type="tel" id="telefono" class="form-control" placeholder="Teléfono" required><br>
             </div>
             <div class="col-md-6">
-            <input type="text" id="tarifa" class="form-control"  placeholder="Tarifa"> <br>
+            <input type="text" id="tarifa" class="form-control"  placeholder="Tarifa" required> <br>
             </div>
         </div>
 
         <label>Fecha de nacimiento:</label>
-        <input type="date" id="nacimiento" class="form-control"  name="Fecha_nacimiento"> <br>
+        <input type="date" id="nacimiento" class="form-control"  name="Fecha_nacimiento" required> <br>
 
         <div class="row">
           <div class="col-md-6">
-          <input type="text" id="especializacion" class="form-control"  placeholder="Especialización en docencia">
+          <input type="text" id="especializacion" class="form-control"  placeholder="Especialización en docencia" required>
           </div>
         <div class="col-md-6">
-          <input type="text" id="titulos" class="form-control"  placeholder="Títulos">
+          <input type="text" id="titulos" class="form-control"  placeholder="Títulos" required>
         </div>
         </div><br>
 
         <div class="row">
          <div class="col-md-6">
-            <select id="modalidad" class="form-select" name="Modalidad_preferida">
+            <select id="modalidad" class="form-select" name="Modalidad_preferida" required>
             <option selected>Modalidad preferida</option>
             <option>Presencial</option>
             <option>Online</option>
             </select>
          </div>
          <div class="col-md-6">
-            <input type="text" id="laburo" class="form-control" placeholder="Años laborando">
+            <input type="text" id="laburo" class="form-control" placeholder="Años laborando" required>
          </div>
         </div> 
         <br>
         <textarea id="descripcion" class="form-control" placeholder="Escribe una breve descripción sobre ti y tu experiencia como tutor..." rows="4"></textarea>
         <br>
-       <button type="button" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
+       <button type="submit" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">
+         Enviar
+        </button>
     </form>
     </div>
  
-<script type="module" src="registro-profesor.js"></script>    
+  
 </body>
 </html>

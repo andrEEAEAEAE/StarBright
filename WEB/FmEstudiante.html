@@ -50,9 +50,9 @@
 
         <input type="password" id="password" class="form-control" placeholder="Contraseña" required> <br>
         
-        <input type="tel" id="telefono" class="form-control" placeholder="Teléfono"><br>
+        <input type="tel" id="telefono" class="form-control" placeholder="Teléfono" required><br>
 
-        <select id="distrito" class="form-select" placeholder="Distrito">
+        <select id="distrito" class="form-select" placeholder="Distrito" required>
          <option selected>Distrito</option>
             <option>Atalaya</option>
             <option>Calobre</option>
@@ -70,7 +70,7 @@
 
         <div class="row">
          <div class="col-md-6">
-            <select id="grado" class="form-select" placeholder="Grado o nivel escolar">
+            <select id="grado" class="form-select" placeholder="Grado o nivel escolar" required>
             <option selected>Grado o nivel escolar</option>
             <option>Premedia</option>
             <option>Media</option>
@@ -78,15 +78,17 @@
             </select>
          </div>
          <div class="col-md-6">
-            <input type="text" id="institucion" class="form-control" placeholder="Institucion educativa">
+            <input type="text" id="institucion" class="form-control" placeholder="Institucion educativa" required>
          </div>
         </div> 
         <br>
-        <button type="button" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">Enviar</button>
+        <button type="submit" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">
+         Enviar
+        </button>
     </form>
     </div>
     </div>
 
-<script type="module" src="registro-estudiante.js"></script>    
+  
 </body>
 </html>
