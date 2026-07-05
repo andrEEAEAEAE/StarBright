@@ -103,6 +103,44 @@ width: 300px;
     bottom: 40px;
     left: 35px;
 }
+.logout{
+    position: relative;
+}
+.logout-menu{
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 180px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: .25s;
+}
+.logout-menu.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.logout-menu a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 18px;
+
+    color: #444;
+    text-decoration: none;
+    border-radius: 15px;
+
+    transition: .2s;
+}
+.logout-menu a:hover{
+    background: #f5f7ff;
+    color: #4f7df5;
+}
 
 /*CSS DE LOS DROPDOWNS*/
 .dropdown-menu {

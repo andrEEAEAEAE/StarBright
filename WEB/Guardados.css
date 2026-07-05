@@ -103,6 +103,44 @@ width: 300px;
     bottom: 40px;
     left: 35px;
 }
+.logout{
+    position: relative;
+}
+.logout-menu{
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 180px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: .25s;
+}
+.logout-menu.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.logout-menu a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 18px;
+
+    color: #444;
+    text-decoration: none;
+    border-radius: 15px;
+
+    transition: .2s;
+}
+.logout-menu a:hover{
+    background: #f5f7ff;
+    color: #4f7df5;
+}
 
 /*CSS DE LOS DROPDOWNS*/
 .dropdown-menu {
@@ -127,168 +165,95 @@ width: 300px;
     font-size: 12px;
 }
 
-/*HEROOOOO*/
-Main{
-    font-family: "Inter", sans-serif;
-    cursor: default;
+.hero{
+    width: 90%;
+    max-width: 1400px;
+    height: 320px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 35px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08),
+        0 5px 15px rgba(0,0,0,.04);
+    position: relative;
+    overflow: hidden;
 }
-.frase{
-    font-size: 30px;
-    padding: 10px;
-}
-#social-link a{
-    padding-left: 10px;
-    padding-top: 6px;
-    padding-bottom: 4px;
-    color: #ffffff;
-    margin: 0 10px 10px 0;
-    min-height: 35px;
-    width: 45px;
-    background: conic-gradient(from 0deg at 50% 50%, #ff3b30, #ffd800, #ff007f, #ff3b30);
-    border-radius: 12px;
-    transition: all .5s ease;
-}
-#social-link:hover{
-    transform: scale(1.05);
-}
-.frase{
-    background: linear-gradient(40deg, rgb(54, 52, 212), rgb(144,198,252));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-weight: 600;
-}
-.btn.btn-primary{
-    border-radius: 20px;
-    background: linear-gradient(30deg, rgb(41, 39, 206), rgb(93, 136, 255));
-    border: none;
-}
-.btn.btn-primary:hover{
-    box-shadow: 0px 1px 20px 3px rgba(190, 190, 221, 0.801);
-    transform: scale(1.03);
-    transition: 0.3s;
-}
-
-
-/*CSS DEL ANUNCIO*/
- body{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Inter", sans-serif;
-}
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
+.imagenes{
     width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.267); 
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    z-index: 9999; 
-    display: none; 
 }
-/*LA ANIMATION EN POPUP ES PARTE DEL KEYFRAME. ESO SIRVE PARA QUE EL POP-UP ABRA CON SUAVIDAD (ANIMACIÓN PS)*/
-.popup{
-    width:380px;
-    height: 480px;
-    background: #ffffff;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    position:relative; 
-    animation: aparecer .4s ease;
-}
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: scale(.8);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.close{
+.hero-texto{
     position: absolute;
-    top: -10px;
-    right: -3px;
-    width: 30px;
-    height: 30px;
-    padding:10px;
-    border-radius:50%;
-    border:none;
-    background: #e7e7e760;
-    color: #383838;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 500px;
 }
-.contenido{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-.contenido{
-   position: absolute;
-    top: -45px;
-    left: -50px;
-    right: 10px;
-    margin: 80px;
-    padding-right: 50px;
-}
-.texto h2{
-    color:#333;
-    margin-bottom:10px;
-    font-weight: 600;
-    padding-top: 30px;
-    font-size: 28px;
-}
-.texto p{
-    color:#666;
-    font-size:20px;
-    margin-bottom: 18px;
-    line-height: 1.2;
-}
-.gradient-text{
-    background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+.hero-texto h1{
+    margin: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, rgb(4, 156, 62), rgb(200, 255, 204));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 600;
 }
-.img-popupMed{
-    position:absolute;
-    right: 338px;
-    bottom: 430px;
-    z-index:3;
-    width: 70px;
+.hero-texto p{
+    margin-top: 10px;
+    background-color: ;
+    font-size: 1.2rem;
 }
-.img-popupReg{
-    position:absolute;
-    right: 165px;
-    bottom: -10px;
-    z-index:3;
-    width: 220px;
-    transform: rotateZ(7deg);
+.mano{
+    position: absolute;
+    width: 200px;
+    left: 30px;
+    top: 55px;
+    user-select: none;
+    pointer-events: none;
 }
-.img-popupCup{
-    position:absolute;
-    right: -2px;
-    bottom: 185px;
-    z-index:3;
-    width: 190px;
+.star{
+    position: absolute;
+    width: 350px;
+    right: -40px;
+    top: 60px;
+    user-select: none;
+    pointer-events: none;
+
 }
-.img-popupFes{
-    position:absolute;
-    right: -22px;
-    bottom: -4px;
-    z-index:3;
-    width: 180px;
-    transform: rotateZ(9deg);
+
+.section{
+    padding: 50px;
+    margin-top: -70px;
+}
+.card{
+    transition: all .25s ease;
+    cursor: pointer;
+    position: relative;
+    background: white;
+    padding: 20px;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 5px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #6A7BFF, #9EDBFF);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    filter: blur(8px);
+}
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 3px 10px 20px rgba(0,0,0,.15)!important;
 }
 
 #notifModal .modal-dialog {
@@ -301,4 +266,3 @@ Main{
     transform: translateY(0);
     opacity: 1;
 }
-

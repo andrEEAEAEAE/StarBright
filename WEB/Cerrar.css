@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle,#ffffff 0%,#f4f7ff 65%,#e3edff 150%);
+    margin-top: 20px;
+    overflow: hidden;
+}
+.card{
+    width:900px;
+    max-width:90%;
+    background:white;
+    border-radius:35px;
+    padding:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:
+        0 25px 60px rgba(30,60,120,.12),
+        0 10px 25px rgba(30,60,120,.08);
+}
+.texto{
+    width:50%;
+}
+.texto h1{
+    font-size:3rem;
+    color:#27364f;
+    margin-bottom:20px;
+}
+.texto p{
+    font-size:1.4rem;
+    color:#6d7484;
+    line-height:1.6;
+}
+.imagen{
+    width:40%;
+    display:flex;
+    justify-content:center;
+}
+.imagen img{
+    width:240px;
+    animation:flotar 3s ease-in-out infinite;
+}
+@keyframes flotar{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+.img-fluid{
+    position:absolute;
+    right:180px;
+    bottom: 455px;
+    z-index:3;
+    width: 310px;
+}
+.img-libros{
+    position:absolute;
+    right: 900px;
+    bottom: 421px;
+    z-index:3;
+    width: 125px;
+}

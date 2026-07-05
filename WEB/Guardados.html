@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="Guardar.css">
+    <link rel="stylesheet" href="Guardados.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item mx-2">
-          <a class="nav-link active" aria-current="page" href="home.html"> 
+          <a class="nav-link" aria-current="page" href="home.html"> 
             <i class="bi bi-house-door"></i>Inicio </a>
         </li>
         <li class="nav-item mx-2">
@@ -97,10 +97,12 @@
          Notificaciones <i class="bi bi-bell ms-2"> </i> </a> </li>
         <li class="my-4 mx-3"><a href="notas.html" class="offcanvas-link">Mis notas
         <i class="bi bi-stickies ms-2"></i> </a> </li>
-       <li class="my-4 mx-3"><a href="Guardados.html" class="offcanvas-link">Favoritos
+       <li class="my-4 mx-3"><a href="Guardados.html" class="offcanvas-link active">Favoritos
         <i class="bi bi-bookmarks ms-2"></i> </a> </li>  
        <li class="my-4 mx-3"><a href="chat.html" class="offcanvas-link">Mensajes
         <i class="bi bi-chat-square-dots ms-2"></i> </a> </li>
+        <li class="my-4 mx-3"><a href="video.html" class="offcanvas-link">Llamadas
+        <i class="bi bi-telephone ms-2"></i> </a> </li>
   <hr>
       <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Modo de pago
         <i class="bi bi-coin ms-2"></i> </a> </li>
@@ -111,10 +113,15 @@
     
     <!--Ícono de cerrar sesión-->
     <div class="offcanvas-footer">
-      <a class="offcanvas-link" href="#"> Salir 
-        <i class="bi bi-box-arrow-left ms-2"></i> </a>
-
-    </div>
+      <div class="logout">
+        <a class="offcanvas-link" href="#" onclick="toggleMenu(event)"> Salir
+          <i class="bi bi-box-arrow-left ms-2"></i></a>
+        <div class="logout-menu" id="logoutMenu">
+          <a href="cerrarSesion.html">
+           <i class="bi bi-box-arrow-left me-2"></i> Cerrar sesión </a>
+        </div>
+      </div>
+     </div>
   </div>
 </div>
 <!--MODAL DE NOTIFICACIONES-->
@@ -151,9 +158,64 @@
 </div>
 </section> 
 
+<section class="hero">
+    <div class="imagenes">
+        <img src="img/Illustrative_Hand_Icon_with_Star_Emblem-removebg-preview.png" class="mano">
+        <img src="img/descarga__16_-removebg-preview (1).png" class="star">
+        </div>
+        <div class="hero-texto">
+        <h1>Favoritos</h1>
+        <p>¡Guarda tus tutores y vuelve a aprender!</p>
+      </div>
+</section>
 
+<section class="section">
+ <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 align-items-stretch g-4 py-5" id="contenedor-cards">                
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Elena Tejada </h5>
 
-<!--ESTO ES UN SCRIPT PARA QUE CADA QUE SE PRESIONA UN LINK, SE ACTIVE EL COLOR EN ELLOS-->
+            <p class="materia text-muted text-center small mb-2">Física</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$55/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+       <div class="col tarjeta"> 
+        <a href="perfil.html?id=1" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+            <img src="img/LOGO_WEB-removebg-preview.png"
+                 class="rounded-circle mx-auto d-block mb-3"
+                 width="100"
+                 height="100"
+                 style="object-fit: cover;">
+            <h5 class="nombre-persona fw-bold text-center mb-1" style="color: rgba(95, 95, 95, 0.911);"> Grace Batista </h5>
+
+            <p class="materia text-muted text-center small mb-2">Lengua</p>
+            <div class="text-center mb-3">
+                <small class="precio text-success">$10/hr</small>
+            </div>
+            <!-- Descripción -->
+            <p class="small text-muted text-center mb-0">
+                Desarrollador web con experiencia en aplicaciones modernas y diseño responsivo.
+            </p>
+        </div>
+        </a>
+       </div>
+ </div>
+</section>
+
 <script>
   const links = document.querySelectorAll(".nav-link");
 
@@ -168,7 +230,6 @@
     });
   });
 </script>
-<!--script para los links del offcanvas (es lo mismo q el navbar pero cambia la class)-->
 <script>
   const OffClinks = document.querySelectorAll(".offcanvas-link");
 
@@ -181,25 +242,22 @@
     });
   });
 </script>
-
-<!--SCRIPT DEL POP-UP-->
 <script>
-    function cerrarPopup() {
-        document.getElementById("popup").style.display = "none";
-    }
+function toggleMenu(event){
+    event.preventDefault();
+    document.getElementById("logoutMenu").classList.toggle("show");
+}
 
-    window.onload = function () {
-        // Chequea si el popup ya se mostró en esta sesión
-        if (!sessionStorage.getItem("popupMostrado")) {
-            setTimeout(function () {
-                document.getElementById("popup").style.display = "flex";
-                sessionStorage.setItem("popupMostrado", "true");
-            }, 1000);
-        }
-    };
+// Cierra el menú si haces clic fuera
+document.addEventListener("click", function(e){
+    const menu = document.querySelector(".logout");
+
+    if(!menu.contains(e.target)){
+        document.getElementById("logoutMenu").classList.remove("show");
+    }
+});
 </script>
 
-<!--SCRIPT DE BOOTSTRAP QUE ME PERMITE ABRIR EL MENÚ EN MODO CELULAR-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
