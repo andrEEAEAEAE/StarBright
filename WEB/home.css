@@ -1,10 +1,10 @@
 body{
-    font-family: sans-serif;
     background: rgb(252, 252, 252);
 }
 .navbar {
     background-color: #f8f9fb !important; 
     padding: 10px 20px;
+    font-family: "Inter", sans-serif;
 }
 
 /*links normales color y eso*/
@@ -59,6 +59,9 @@ body{
 
 /*CSS DEL OFFCANVAS*/
 /*el título que va dentro del offcanvas*/
+.offcanvas{
+    font-family: "Inter", sans-serif;
+}
 .offcanvas-title{
     font-size: 28px;
     font-weight: bold;
@@ -125,8 +128,8 @@ width: 300px;
 }
 
 /*HEROOOOO*/
-body{
-    font-family: sans-serif;
+Main{
+    font-family: "Inter", sans-serif;
     cursor: default;
 }
 .frase{
@@ -164,7 +167,6 @@ body{
     transform: scale(1.03);
     transition: 0.3s;
 }
-<<<<<<< HEAD
 
 
 /*CSS DEL ANUNCIO*/
@@ -172,7 +174,7 @@ body{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: sans-serif;
+    font-family: "Inter", sans-serif;
 }
 .overlay{
     position: fixed;
