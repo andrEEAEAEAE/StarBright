@@ -4,33 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Polit.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>Políticas de privacidad</title>
 </head>
 <body>
-    <div class="overlay" id="popup">
-        <div class="popup">
-            <button class="close" onclick="cerrarPopup()">✕</button>
-            
-            <img src="img/medalla.png" class="img-popupMed">
-            <img src="img/regalos.png" class="img-popupReg">
-            <img src="img/cupon.png" class="img-popupCup">
-             <img src="img/festejo.png" class="img-popupFes">
-
-            <div class="contenido">
-                <div class="texto">
-                    <br>
-                    <h2>¡Bienvenido!</h2>
-                    <p>Aprovecha el descuento en tus primeras <span class="gradient-text">tres</span> sesiones.
-                        ¡No te lo pierdas!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-  
 <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -51,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item mx-2">
-          <a class="nav-link active" aria-current="page" href="home.html"> 
+          <a class="nav-link" aria-current="page" href="home.html"> 
             <i class="bi bi-house-door"></i>Inicio </a>
         </li>
         <li class="nav-item mx-2">
@@ -89,7 +69,7 @@
             </li>
             <hr>
             <li class="dropdown-item">
-              <a href="perfil.html" 
+              <a href="perfilpublico.html" 
               style="text-decoration: none; color: #5e6164; font-weight: 500;">
               <i class="bi bi-brush me-2"></i>Editar perfil </a>
             </li>
@@ -101,8 +81,6 @@
   </div>
 </nav>
 </header>  
-
-<!--Código del offcanvas (no lo puse arriba para no kgar el navbar)-->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
   <div class="offcanvas-header">
     <button class="btn" data-bs-dismiss="offcanvas" style="font-size: 20px;">
@@ -128,7 +106,7 @@
   <hr>
       <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Modo de pago
         <i class="bi bi-coin ms-2"></i> </a> </li>
-      <li class="my-4 mx-3"><a href="Políticas.html" class="offcanvas-link">Políticas
+      <li class="my-4 mx-3"><a href="Políticas.html" class="offcanvas-link active">Políticas
         <i class="bi bi-shield-lock ms-2"></i> </a> </li>
     </ul>
     <!--EL MS QUE SE COLOCA AL FINAL DE CIERTAS CLASES COMO "MARGIN (M)". Después del M se coloca (S;E;X;Y) => Start, End, X axis, Y axis -->
@@ -146,8 +124,6 @@
      </div>
   </div>
 </div>
-
-<!--MODAL DE NOTIFICACIONES-->
 <section>
     <div class="modal fade" id="notifModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -181,141 +157,48 @@
 </div>
 </section> 
 
-<main>
-  <!--El hero-->
-    <div class="container my-5"> 
-        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 shadow-lg"> 
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3"> 
-                <h1 class="display-4 fw-bold lh-1" style="color: rgb(62, 62, 62);">¡TutorNow!</h1> 
-                <p class="lead"><q class="frase">Tu apoyo académico, siempre contigo</q></p> 
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"> 
-                  <a href="buscar.html">  
-                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Buscar tutores</button> 
-                  </a>
-                </div> 
-            </div> 
-            <!--p0 Significa padding=0. Si quiero que la imgagen tenga un margen bonito puedo subirlo a p4.-->
-            <div class="col-lg-4 p-0 mb-5">
-                <img class="rounded-lg-3" src="img/hero-removebg-preview (1).png" width="330">
-            </div> 
-        </div> 
-    </div>
-    <!--Estas son las funciones-->
-    <div class="container px-4 py-5" id="featured-3">  
-        <h2 class="pb-2">Funciones principales</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3"> 
-            <div class="feature col"> 
-                <h4 class="fs-2 text-body-emphasis"> IA </h4>
-                 <!--Div para la imagen-->
-                <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2"> 
-                    <img src="img/IA.png" class="rounded-3" width="200">
-                    </div> 
-                    <p>Contamos con una herramienta de inteligencia artifial generativa la cual podrán utilizar 
-                      si se desea reforzar conocimientos en temas. Esta IA genera talleres interactivos descargables.
-                    </p>
-            </div>
-            <div class="feature col"> 
-                <h4 class="fs-2 text-body-emphasis">Mis tutorías </h4> 
-                <!--Div para la imagen-->
-                <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2 mb-3"> 
-                    <img src="img/Calendario.png" class="rounded-3" width="200">
-                    </div> 
-                    <p>'Mis tutorías' es apratado de calendario que le permite ingresar al usuario las fechas ocupadas por tutorías.
-                      Esta función se implementó con el fin de llevar una constancia de las clases impartidas y recibidas.</p> 
-            </div> 
-            <div class="feature col"> 
-                <h4 class="fs-2 text-body-emphasis"> Buscar </h4> 
-                 <!--Div para la imagen-->
-                <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2 mb-3"> 
-                    <img src="img/Buscar.png" class="rounded-3" width="200">
-                    </div> 
-                    <p>El apartado de 'buscar' le permite al usuario la busqueda de perfiles de docentes o estudiantes ¡Siéntanse cómodos de 
-                      escoger su preferido!
-                    </p> 
-            </div>
-        </div> 
-    </div>
-    <!--Esta es la información general-->
-    <div class="container px-4"> 
-        <h2 class="pb-2">Información general</h2> 
-        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5"> 
-            <div class="col d-flex flex-column align-items-start gap-2"> 
-                <h2 class="fw-bold text-body-emphasis">¿Cómo nos manejamos?</h2> 
-                <p class="text-body-secondary">Esta es una plataforma interactiva que conecta a estudiantes con tutores listos para echarles una mano en lo que necesiten. Nuestra web ofrece variedad de docentes disponibles y dispuestos a ofrecer la ayuda exacta que necesitan.
-                  Con nuestra plataforma, los estudiantes pueden obtener un soporte académico de manera sencilla y desde cualquier lugar. Ofrecemos una forma más accesible y flexible de aprender, adaptadas a las necesidades estudiantiles.
-                </p> 
-            </div> 
-         <div class="col">
-            <div class="row"> 
-                    <div class="col"> 
-                        <img src="img/WhatsApp_Image_2026-06-28_at_5.17.32_PM__1_-removebg-preview.png" class="rounded-5"  width="300">
-                    </div>
-            </div>
+<section class="politicas">
+    <div class="politicas-contenedor">
+        <div class="hero-badge">
+            <i class="bi bi-shield-lock"></i>
+            Políticas de Privacidad
         </div>
-        </div>
-    </div> 
-</main>  
-   <!--footer--> 
-    <div class="container"> 
-        <footer class="row py-5 my-5 border-top"> 
-            <div class="col mb-3"> 
-                <img src="img/LOGO_WEB-removebg-preview.png" width="47" height="45">
-                    <p class="text-body-secondary">© 2026</p> 
-            </div> 
-            <div class="col mb-3">          <!--ESte div es solo pa tener espacio-->
-            </div> 
-                <div class="col mb-3"> 
-                    <h5>Nosotros</h5> 
-                    <ul class="nav flex-column"> 
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-body-secondary">Nuestros servicios</a>
-                        </li> 
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-body-secondary">Privacidad</a>
-                        </li> 
-                        <li class="nav-item mb-2">
-                                <a href="#" class="nav-link p-0 text-body-secondary">ALGO MÁS</a>
-                        </li> 
-                    </ul> 
-                </div> 
-                <div class="col mb-3"> 
-                    <h5>Ayuda</h5> 
-                    <ul class="nav flex-column"> 
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-body-secondary">Preguntas</a>
-                        </li> 
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-body-secondary">Problemas</a>
-                        </li> 
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-body-secondary">Pagos</a>
-                        </li> 
-                    </ul> 
-                </div> 
-                <div class="col mb-3"> 
-                    <h5>Tutorías</h5> 
-                    <ul class="nav flex-column"> 
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-body-secondary">Clases</a>
-                        </li> 
-                        <li class="nav-item mb-2">
-                            <a href="#" class="nav-link p-0 text-body-secondary">Prácticas</a>
-                        </li> 
-                    </ul> 
-                </div> 
-                <div class="col mb-3"> 
-                    <h5>Síguenos</h5> 
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2" id="social-link">
-                            <a href="#" class="nav-link p0"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
-                        </li>
-                    </div>
-                    </ul>
+        <h1>
+            Tu <span>privacidad</span><br>
+            es nuestra prioridad
+        </h1>
+        <div class="politicas-cards">
+            <div class="politica-card estudiante" id="estudiante">
+                <div class="header-card">
+                    <div class="icono">👨‍🎓</div>
+                    <h2>Soy Estudiante</h2>
                 </div>
-        </footer> 
+                <p>
+                    Busco apoyo académico para mejorar mi comprensión en materias.
+                </p>
+                <ul>
+                    <li>Bachillerato o universidad</li>
+                    <li>Resido en Veraguas</li>
+                </ul>
+                <a href="PoliticasEst.html" class="btn-politica">Ver Política →</a>
+            </div>
+            <div class="politica-card profesor" id="profesor">
+                <div class="header-card">
+                    <div class="icono">👨‍🏫</div>
+                    <h2>Soy Profesor/a</h2>
+                </div>
+                <p>
+                    Ofrezco tutorías académicas y quiero generar un ingreso compartiendo mi conocimiento con estudiantes.
+                </p>
+                <ul>
+                    <li>Docente verificado</li>
+                    <li>Ubicación Veraguas</li>
+                </ul>
+                <a href="PoliticasProf.html" class="btn-politica">Ver Política →</a>
+            </div>
+        </div>
     </div>
-
-
+</section>
 
 <script>
   const links = document.querySelectorAll(".nav-link");

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PoliEst.css">
+    <title>Privacidad para Estudiantes</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <button class="btn list-icon me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="font-size: 20px;">
+      <i class="bi bi-list"> <span class="position-absolute top-1 p-1 bg-danger border border-light rounded-circle"></span></i>
+    </button>
+
+        <a class="navbar-brand" href="#">
+            <img src="img/LOGO_WEB-removebg-preview.png" alt="Logo" width="43" height="40" class="d-inline-block align-middle"><b class="gradient-text">TutorNow</b>
+        </a>  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-2">
+          <a class="nav-link" aria-current="page" href="home.html"> 
+            <i class="bi bi-house-door"></i>Inicio </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="Buscar.html">
+            <i class="bi bi-people"></i>Tutores</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="IA.html"> 
+            <i class="bi bi-book"></i>Recursos</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="calendario.html">
+            <i class="bi bi-calendar-week"></i>Mis tutorías</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="CentroAyuda.html">
+            <i class="bi bi-question-circle"></i>Más información</a>
+        </li>
+
+        <li class="nav-item mx-2 dropdown">
+            <a class="nav-link profile-icon d-flex align-items-center" href="#" 
+            data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i></a>
+
+              <ul class="dropdown-menu dropdown-menu-end" id="dropdown-perfil">
+            <li class="text-end px-2 pt-1">
+              <button type="button" class="btn-close"></button>
+            </li>
+            <li>
+              <strong class="dropdown-header" id="NombrePerfilDrop">
+                <i class="bi bi-person me-2" id="FotoPerfilDrop"></i> Nombre
+              </strong>
+            </li>
+            <hr>
+            <li class="dropdown-item">
+              <a href="perfil.html" 
+              style="text-decoration: none; color: #5e6164; font-weight: 500;">
+              <i class="bi bi-brush me-2"></i>Editar perfil </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>  
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header">
+    <button class="btn" data-bs-dismiss="offcanvas" style="font-size: 20px;">
+    <i class="bi bi-list"></i>
+  </button>
+    <h5 class="offcanvas-title ms-2">TutorNow</h5>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="list-unstyled">
+        <li class="my-4 mx-3">
+        <a href="#" class="offcanvas-link" data-bs-toggle="modal" data-bs-target="#notifModal" data-bs-dismiss="offcanvas">
+         Notificaciones <i class="bi bi-bell ms-2"> </i> </a> </li>
+        <li class="my-4 mx-3"><a href="notas.html" class="offcanvas-link">Mis notas
+        <i class="bi bi-stickies ms-2"></i> </a> </li>
+       <li class="my-4 mx-3"><a href="Guardados.html" class="offcanvas-link">Favoritos
+        <i class="bi bi-bookmarks ms-2"></i> </a> </li>  
+       <li class="my-4 mx-3"><a href="chat.html" class="offcanvas-link">Mensajes
+        <i class="bi bi-chat-square-dots ms-2"></i> </a> </li>
+       <li class="my-4 mx-3"><a href="video.html" class="offcanvas-link">Llamadas
+        <i class="bi bi-telephone ms-2"></i> </a> </li>
+  <hr>
+      <li class="my-4 mx-3"><a href="#" class="offcanvas-link">Modo de pago
+        <i class="bi bi-coin ms-2"></i> </a> </li>
+      <li class="my-4 mx-3"><a href="Políticas.html" class="offcanvas-link active">Políticas
+        <i class="bi bi-shield-lock ms-2"></i> </a> </li>
+    </ul>
+
+     <div class="offcanvas-footer">
+      <div class="logout">
+        <a class="offcanvas-link" href="#" onclick="toggleMenu(event)"> Salir
+          <i class="bi bi-box-arrow-left ms-2"></i></a>
+        <div class="logout-menu" id="logoutMenu">
+          <a href="cerrarSesion.html">
+           <i class="bi bi-box-arrow-left me-2"></i> Cerrar sesión </a>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+<section>
+    <div class="modal fade" id="notifModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 20px;">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: #0d6efd; font-weight: 600;"><i class="bi bi-bell me-2"></i>Notificaciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-calendar-check fs-4 text-primary"></i>
+            <div>
+              <p class="mb-1" style="font-weight:600;">Tu tutoría de Matemáticas comienza en 1 hora.</p>
+              <small class="text-body-secondary">Hoy, 9:00 AM</small>
+            </div>
+          </li>
+          <li class="list-group-item d-flex align-items-start gap-3 py-3">
+            <i class="bi bi-chat-left-text fs-4 text-success"></i>
+            <div>
+              <p class="mb-1">Tienes un nuevo mensaje del Prof. García.</p>
+              <small class="text-body-secondary">Ayer, 6:45 PM</small>
+            </div>
+         </li>
+         <li class="list-group-item gap-3 py-3" style="border-radius: 20px;">
+         </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container">
+    <!-- ... aquí sigue tu header con el pingüino y todo el resto de tu contenido, tal como ya lo tienes ... -->
+
+<div class="container">
+
+    <header class="header">
+        <div class="header-text">
+        <h1>Privacidad para Estudiantes</h1>
+        <p>Todo lo que necesitas saber sobre cómo protegemos tu información en TutorNow</p>
+        </div>
+        <img src="img/WhatsApp_Image_2026-06-28_at_5.17.32_PM-removebg-preview.png" class="img-png">
+    </header>
+
+    <div class="intro-section">
+        <div class="welcome-card">
+            <h2><i data-lucide="shield-check"></i> ¡Hola, Estudiante!</h2>
+            <p>En TutorNow entendemos que confías en nosotros con información importante. Por eso queremos ser completamente transparentes sobre qué hacemos con tus datos cuando usas nuestra plataforma para buscar tutorías académicas.</p>
+            <br>
+            <p><strong>TutorNow te conecta con tutores</strong>, donde puedes explorar perfiles, comparar tarifas, agendar sesiones y pagar de forma segura, todo desde la app.</p>
+        </div>
+
+        <div class="apply-card">
+            <h3><i data-lucide="map-pin"></i> ¿A quién aplica esta política?</h3>
+            <p style="font-size: 0.9rem; text-align: center; color: gray;">Esta política aplica si cumples los <strong>2 criterios</strong> al mismo tiempo:</p>
+            <div class="criteria-box">
+                <div class="criterion">
+                    <i data-lucide="graduation-cap"></i>
+                    <p><strong>Nivel educativo</strong></p>
+                    <p style="color:gray">Estudiante de media (bachillerato) o universidad</p>
+                </div>
+                <div class="criterion">
+                    <i data-lucide="map-pinned"></i>
+                    <p><strong>Ubicación</strong></p>
+                    <p style="color: gray">Resides o estudias en Veraguas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><i data-lucide="eye"></i> ¿Qué información recopilamos de ti?</h2>
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Al registrarte como docente
+                <i data-lucide="chevron-down" class="chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul>
+                    <li>Nombre completo</li>
+                    <li>Fecha de nacimiento</li>
+                    <li>Correo electrónico activo</li>
+                    <li>Número de teléfono móvil</li>
+                    <li>En qué corregimiento se ubica</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Al crear tu perfil docente
+                <i data-lucide="chevron-down" class="chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul>
+                    <li>Foto de perfil profesional</li>
+                    <li>Descripción personal</li>
+                    <li>Títulos universitarios</li>
+                    <li>Tarifa por hora</li>
+                    <li>Modalidad: presencial en Veraguas, virtual o ambas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Tu perfil público: qué ven los estudiantes
+                <i data-lucide="chevron-down" class="chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul>
+                    <li>Búsquedas realizadas y filtros aplicados (materias, precio, horario)</li>
+                    <li>Profesores visitados y sesiones agendadas</li>
+                    <li>Calificaciones y reseñas que dejas sobre los profesores</li>
+                    <li>Historial de asistencia: sesiones completadas o canceladas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><i data-lucide="star"></i> ¿Para qué usamos tu información?</h2>
+    <p style="margin-bottom: 20px; color: gray;">Solo usamos tus datos para mejorar tu experiencia en TutorNow.</p>
+    <div class="info-list">
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="sparkles"></i></div>
+            <div class="info-text">
+                <h4>Recomendarte tutores</h4>
+                <p>Analizamos tus materias y nivel académico para sugerirte los profesores más adecuados para ti.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="calendar"></i></div>
+            <div class="info-text">
+                <h4>Gestionar tus sesiones</h4>
+                <p>Agendamos y te recordamos tus tutorías próximas por correo y notificaciones push.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="credit-card"></i></div>
+            <div class="info-text">
+                <h4>Procesar tus pagos</h4>
+                <p>Completamos la transacción de forma segura cuando confirmas una sesión.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="trending-up"></i></div>
+            <div class="info-text">
+                <h4>Mejorar la plataforma</h4>
+                <p>Analizamos patrones de uso de forma anonimizada para hacer TutorNow más útil para todos.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="lock"></i></div>
+            <div class="info-text">
+                <h4>Proteger tu cuenta</h4>
+                <p>Detectamos accesos sospechosos o usos no autorizados para mantenerte seguro/a.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="bell"></i></div>
+            <div class="info-text">
+                <h4>Enviarte avisos</h4>
+                <p>Te notificamos sobre cambios en tus sesiones, nuevos profesores o actualizaciones de políticas.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><i data-lucide="key-round"></i> ¿Quién puede ver tu información?</h2>
+    <p style="margin-bottom: 20px; color:gray;">Tienes control. Aquí un desglose claro de quién accede a qué:</p>
+    <div class="access-container">
+        
+        <div class="access-card">
+            <h3><i data-lucide="user-check"></i> Los profesores que contratas</h3>
+            <div class="access-grid">
+                <div class="access-block ve">
+                    <h5><i data-lucide="check-circle-2"></i> Ve:</h5>
+                    <ul>
+                        <li>Tu nombre de pila</li>
+                        <li>Tu nivel académico y materias</li>
+                        <li>Horario y fecha de la sesión confirmada</li>
+                    </ul>
+                </div>
+                <div class="access-block no-ve">
+                    <h5><i data-lucide="x-circle"></i> No ve:</h5>
+                    <ul>
+                        <li>Tu cédula o pasaporte</li>
+                        <li>Tu dirección completa</li>
+                        <li>Tu teléfono o historial de pagos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="access-card">
+            <h3><i data-lucide="headset"></i> Soporte de TutorNow</h3>
+            <div class="access-grid">
+                <div class="access-block ve">
+                    <h5><i data-lucide="check-circle-2"></i> Ve:</h5>
+                    <ul>
+                        <li>Datos necesarios para resolver tu consulta o reclamo</li>
+                    </ul>
+                </div>
+                <div class="access-block no-ve">
+                    <h5><i data-lucide="x-circle"></i> No ve:</h5>
+                    <ul>
+                        <li>Tu contraseña (siempre cifrada, nunca legible)</li>
+                        <li>Números completos de tarjeta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="access-card">
+            <h3><i data-lucide="wallet"></i> Procesadores de pago externos</h3>
+            <div class="access-grid">
+                <div class="access-block ve">
+                    <h5><i data-lucide="check-circle-2"></i> Ve:</h5>
+                    <ul>
+                        <li>Datos mínimos para completar la transacción segura</li>
+                    </ul>
+                </div>
+                <div class="access-block no-ve">
+                    <h5><i data-lucide="x-circle"></i> No ve:</h5>
+                    <ul>
+                        <li>Tu perfil académico, sesiones ni historial de tutorías</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><i data-lucide="banknote"></i> Pagos: cómo funciona para ti</h2>
+    <p style="margin-bottom: 20px; color: gray;">Como estudiante, pagas directamente la tarifa del tutor a través de la plataforma. Esto es lo que ocurre con tu dinero y tus datos de pago:</p>
+    <div class="info-list">
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="shield"></i></div>
+            <div class="info-text">
+                <h4>Tus datos bancarios están protegidos</h4>
+                <p>No almacenamos números completos de tarjeta en nuestros servidores.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="help-circle"></i></div>
+            <div class="info-text">
+                <h4>¿Adónde va tu pago?</h4>
+                <p>Del monto que pagas: la mayor parte va al profesor. TutorNow retiene una pequeña comisión por facilitar la conexión y la transacción. El porcentaje exacto se muestra antes de confirmar cada pago.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><i data-lucide="scale"></i> Tus derechos sobre tus datos</h2>
+    <p class="subtext-law">Bajo la <strong>Ley 81 de 2019 de Panamá</strong> tienes derechos concretos. Aquí los explicamos simple:</p>
+    <div class="info-list">
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="download"></i></div>
+            <div class="info-text">
+                <h4>Ver tus datos</h4>
+                <p>Pídenos en cualquier momento una copia completa de todo lo que tenemos sobre ti.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="edit-3"></i></div>
+            <div class="info-text">
+                <h4>Corregir errores</h4>
+                <p>¿Algo está mal? Corrígelo desde tu perfil o escríbenos y lo actualizamos.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="arrow-left-right"></i></div>
+            <div class="info-text">
+                <h4>Portabilidad</h4>
+                <p>Recibe una copia de tus datos en formato legible si deseas guardarlos.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><i data-lucide="shield-alert"></i> Cómo protegemos tu información</h2>
+    <div class="info-list" style="margin-bottom: 50px;">
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="key-round"></i></div>
+            <div class="info-text">
+                <h4>Contraseñas seguras</h4>
+                <p>Las contraseñas son privadas. Es solo tuya.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="user-x"></i></div>
+            <div class="info-text">
+                <h4>Acceso restringido</h4>
+                <p>Solo el personal autorizado y con necesidad real puede acceder a tus datos.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="clipboard-check"></i></div>
+            <div class="info-text">
+                <h4>Auditorías regulares</h4>
+                <p>Revisamos periódicamente nuestros sistemas para encontrar vulnerabilidades.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="info-icon"><i data-lucide="monitor"></i></div>
+            <div class="info-text">
+                <h4>Control de sesiones</h4>
+                <p>Puedes cerrar tu sesión en todos tus dispositivos desde los ajustes de seguridad.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    lucide.createIcons();
+
+    document.querySelectorAll('.accordion-header').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionItem = button.parentElement;
+            accordionItem.classList.toggle('active');
+        });
+    });
+</script>
+<script>
+function toggleMenu(event){
+    event.preventDefault();
+    document.getElementById("logoutMenu").classList.toggle("show");
+}
+document.addEventListener("click", function(e){
+    const menu = document.querySelector(".logout");
+    if(!menu.contains(e.target)){
+        document.getElementById("logoutMenu").classList.remove("show");
+    }
+});
+</script>
+<script>
+  const links = document.querySelectorAll(".nav-link");
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+</script>
+<script>
+  const OffClinks = document.querySelectorAll(".offcanvas-link");
+  OffClinks.forEach(link => {
+    link.addEventListener("click", function() {
+      OffClinks.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
