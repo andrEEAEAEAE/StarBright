@@ -187,6 +187,21 @@ function cargarPerfil(id) {
     document.getElementById('perfilTarifa').textContent = p.tarifa;
     document.getElementById('perfilFoto').src = p.foto;
     document.getElementById('perfilAcerca').textContent = p.acerca;
+
+    // NUEVO: actualizar el corazón según el profesor actual
+    const boton = document.getElementById('btnFavorito');
+    const icono = document.getElementById('iconoFavorito');
+    boton.dataset.profesorId = id; // guardamos qué profesor está abierto ahora
+
+    if (favoritos.has(String(id))) {
+        boton.classList.add('activo');
+        icono.classList.remove('fa-regular');
+        icono.classList.add('fa-solid');
+    } else {
+        boton.classList.remove('activo');
+        icono.classList.remove('fa-solid');
+        icono.classList.add('fa-regular');
+    }
 }
 
 const modalDenuncia = document.getElementById("modalDenuncia");

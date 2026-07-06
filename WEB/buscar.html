@@ -787,18 +787,24 @@ document.addEventListener("click", function(e){
 });
 </script>
 <script>
-  function toggleFavorito() {
+   // Guarda los IDs de los profesores marcados como favoritos
+const favoritos = new Set();
+
+function toggleFavorito() {
     const boton = document.getElementById('btnFavorito');
     const icono = document.getElementById('iconoFavorito');
+    const id = boton.dataset.profesorId; // el id del profesor actualmente abierto
 
-    boton.classList.toggle('activo');
-
-    if (boton.classList.contains('activo')) {
-        icono.classList.remove('fa-regular');
-        icono.classList.add('fa-solid'); // corazón relleno
-    } else {
+    if (favoritos.has(id)) {
+        favoritos.delete(id);
+        boton.classList.remove('activo');
         icono.classList.remove('fa-solid');
-        icono.classList.add('fa-regular'); // corazón vacío
+        icono.classList.add('fa-regular');
+    } else {
+        favoritos.add(id);
+        boton.classList.add('activo');
+        icono.classList.remove('fa-regular');
+        icono.classList.add('fa-solid');
     }
 }
 </script>
