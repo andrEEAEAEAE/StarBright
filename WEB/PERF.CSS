@@ -107,6 +107,37 @@ body{
 /*==========================
         BOTONES
 ==========================*/
+.perfil-modal-wrapper .btn-favorito {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #6b7280;
+    transition: 0.25s;
+}
+
+.perfil-modal-wrapper .btn-favorito:hover {
+    background: #f6f6f6;
+    transform: scale(1.05);
+}
+
+.perfil-modal-wrapper .btn-favorito.activo {
+    color: #ef4444;
+    border-color: #ef4444;
+    animation: latido 0.35s ease;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
 
 .perfil-modal-wrapper .acciones{
     display:flex;

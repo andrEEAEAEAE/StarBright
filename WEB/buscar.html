@@ -635,12 +635,15 @@
                 </div>
               </div>
               <div class="acciones">
-                <a href="chat.html">
-                <button class="btn-primary">
+              <a href="chat.html">
+               <button class="btn-primary">
                   <i class="fa-solid fa-paper-plane"></i> Contactar
-                </button>
-                </a>
-              </div>
+               </button>
+              </a>
+               <button class="btn-favorito" id="btnFavorito" onclick="toggleFavorito()">
+                  <i class="fa-regular fa-heart" id="iconoFavorito"></i>
+               </button>
+          </div>
             </div>
             <div class="cards">
               <div class="card">
@@ -741,6 +744,23 @@ document.addEventListener("click", function(e){
     }
 });
 </script>
+<script>
+  function toggleFavorito() {
+    const boton = document.getElementById('btnFavorito');
+    const icono = document.getElementById('iconoFavorito');
+
+    boton.classList.toggle('activo');
+
+    if (boton.classList.contains('activo')) {
+        icono.classList.remove('fa-regular');
+        icono.classList.add('fa-solid'); // corazón relleno
+    } else {
+        icono.classList.remove('fa-solid');
+        icono.classList.add('fa-regular'); // corazón vacío
+    }
+}
+</script>
+
 <script type="module" src="buscar.js"></script>
 <script src="perfiles.js"></script>
 
