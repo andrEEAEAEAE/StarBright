@@ -158,6 +158,22 @@ const profesores = {
         tarifa: "$9/hr",
         foto: "img/perfil.jpg",
         acerca: "¡Enseño física de manera sencilla para la comprensión de todos!"
+    },
+    21: {
+        nombre: "Didier Martínez",
+        profesion: "Tutor de Programación",
+        experiencia: "2 años",
+        tarifa: "$8/hr",
+        foto: "img/perfil.jpg",
+        acerca: "Graduado de honores en la UTP. Aprenderás de manera eficaz y económica."
+    },
+    22: {
+        nombre: "Daniela de Fernández",
+        profesion: "Tutor de Biología",
+        experiencia: "1 año",
+        tarifa: "$10/hr",
+        foto: "img/perfil.jpg",
+        acerca: "Recién graduada de Lic. Biología. Poseo amplios conocimientos y me adapto a la manera de aprender del estudiante."
     }
 };
 
