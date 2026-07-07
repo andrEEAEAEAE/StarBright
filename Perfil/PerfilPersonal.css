@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --primary:#2F6BFF;
+    --primary-light:#EAF3FF;
+    --primary-dark:#173C8F;
+    --background:#F5F9FF;
+    --text:#2D3448;
+    --gray:#7A859E;
+    --gold:#FFC107;
+    --shadow:0 15px 40px rgba(40,90,180,.12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,#EEF5FF,#DCEBFF);
+    min-height:100vh;
+  
+}
+
+/*=========================
+        CONTENEDOR
+==========================*/
+
+.perfil{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/*=========================
+        TARJETA
+==========================*/
+
+.perfil-card{
+
+    width:100%;
+    max-width:980px;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    animation:aparecer .7s ease;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================
+        HEADER
+==========================*/
+
+.perfil-header{
+
+    background:linear-gradient(135deg,#4D7CFE,#6CA8FF);
+
+    text-align:center;
+
+    padding:35px 25px 75px;
+
+    position:relative;
+
+}
+
+.foto-perfil{
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.perfil-header h2{
+
+    margin-top:18px;
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.rating-principal{
+
+    margin-top:10px;
+
+    color:var(--gold);
+
+    font-size:1.15rem;
+
+}
+
+.rating-principal span{
+
+    color:white;
+
+    font-weight:700;
+
+    margin-left:8px;
+
+}
+
+.recomendacion{
+
+    color:#F5F5F5;
+
+    margin-top:8px;
+
+    font-size:.95rem;
+
+}
+
+/*=========================
+        INFORMACIÓN
+==========================*/
+
+.informacion{
+
+    padding:40px;
+
+}
+
+.info-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    background:var(--primary-light);
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    margin-bottom:20px;
+
+    transition:.25s;
+
+}
+
+.info-box:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.info-box i{
+
+    width:55px;
+    height:55px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--primary);
+
+    font-size:1.4rem;
+
+}
+
+.info-box h6{
+
+    margin-bottom:4px;
+
+    color:var(--primary-dark);
+
+    font-weight:700;
+
+}
+
+.info-box p{
+
+    margin:0;
+
+    color:var(--gray);
+
+}
+
+/*=========================
+        DESCRIPCIÓN
+==========================*/
+
+.descripcion{
+
+    margin:0 40px 35px;
+
+    background:#F8FBFF;
+
+    border-left:6px solid var(--primary);
+
+    border-radius:18px;
+
+    padding:25px;
+
+}
+
+.descripcion h4{
+
+    color:var(--primary-dark);
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.descripcion p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+/*=========================
+        COMENTARIOS
+==========================*/
+
+.comentarios{
+
+    margin:0 40px 40px;
+
+}
+
+.comentarios h4{
+
+    margin-bottom:20px;
+
+    color:var(--primary-dark);
+
+    font-weight:700;
+
+}
+
+.comentario{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    border:1px solid #E7EEF9;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.comentario-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.comentario-header img{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.comentario-header h6{
+
+    margin:0;
+
+    color:var(--text);
+
+    font-weight:700;
+
+}
+
+.comentario-header small{
+
+    color:var(--gray);
+
+}
+
+.rating-comentario{
+
+    color:var(--gold);
+
+    margin:15px 0;
+
+}
+
+.comentario p{
+
+    color:#555;
+
+    line-height:1.7;
+
+    margin:0;
+
+}
+
+/*=========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+    body{
+
+        padding:25px 12px;
+
+    }
+
+    .informacion{
+
+        padding:25px;
+
+    }
+
+    .descripcion{
+
+        margin:0 25px 25px;
+
+    }
+
+    .comentarios{
+
+        margin:0 25px 30px;
+
+    }
+
+    .perfil-header{
+
+        padding-bottom:55px;
+
+    }
+
+}
