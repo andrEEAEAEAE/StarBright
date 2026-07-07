@@ -1,0 +1,145 @@
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px 80px;
+}
+
+.wrap h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0 0 16px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #6c757d;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto 56px;
+}
+
+/* CLAVE: flex + wrap + justify-content centra sin importar cuántas tarjetas haya */
+.plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.plan {
+    flex: 1 1 280px;
+    max-width: 320px;
+    border-radius: 14px;
+    padding: 60px 22px 28px;
+    position: relative;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.plan.purple { background: #8B7FC7; }
+.plan.green  { background: #3CA980; }
+.plan.blue   { background: #3E8FD0; }
+.plan.orange { background: #E0954A; }
+
+.price-tag {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 14px 26px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    width: 78%;
+}
+
+.plan-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.purple .plan-name { color: #6E5FB5; }
+.green  .plan-name { color: #2F8A69; }
+.blue   .plan-name { color: #2E74B0; }
+.orange .plan-name { color: #C97B32; }
+
+.price {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1F2430;
+    margin: 2px 0;
+}
+
+.per-month {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #9aa1b0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 20px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.features li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.95);
+}
+
+.cta {
+    background: rgba(255,255,255,0.25);
+    border: none;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: auto;
+    transition: background 0.2s ease;
+}
+
+.cta:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Botón "Empezar transacción" debajo de las tarjetas */
+.btn-plans {
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    border: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 34px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(13,110,253,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-plans:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(13,110,253,0.35);
+}
+
+@media (max-width: 560px) {
+    .wrap h1 { font-size: 2rem; }
+    .plan { max-width: 100%; }
+}

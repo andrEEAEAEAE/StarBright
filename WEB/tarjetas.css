@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#ffffff;
+    overflow-x:hidden;
+}
+
+.contenedor-pago{
+    min-height:calc(100vh - 80px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.tarjeta-pago{
+    width:100%;
+    max-width:480px;
+    background:white;
+    border-radius:22px;
+    padding:35px;
+    position:relative;
+    box-shadow:
+    0 0 60px rgba(120,150,255,.45),
+    0 15px 45px rgba(0,0,0,.12);
+    animation:subir .7s ease;
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.escudo{
+    font-size:30px;
+    color:#74B8F9;
+    margin-bottom: 12px;
+
+}
+
+.form-label{
+    color:#23356F;
+    font-weight:700;
+    font-size:.9rem;
+}
+
+
+.form-control{
+    background: #DCEEFF;
+    border:none;
+    border-radius:30px;
+    height:48px;
+    padding-left:18px;
+    font-size:.95rem;
+    transition:.25s;
+}
+
+.form-control::placeholder{
+    color:#8E9AB4;
+}
+.form-control:focus{
+    background:white;
+    border:2px solid #7CB6FF;
+    box-shadow:0 0 12px rgba(76,140,255,.35);
+}
+
+.input-icono{
+    position:relative;
+}
+.input-icono i{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#2D3F76;
+    font-size:1.2rem;
+}
+
+.btn-pagar{
+    background:linear-gradient(90deg,#3F86FF,#2C60F6);
+    border:none;
+    border-radius:30px;
+    height:48px;
+    font-weight:700;
+    color:white;
+    transition:.3s;
+}
+
+.btn-pagar:hover{
+    transform:translateY(3px);
+}
+
+.texto-inferior{
+    margin-top:18px;
+    text-align:center;
+    font-size:.72rem;
+    color:#41528A;
+}
+.texto-inferior a{
+    text-decoration:none;
+    font-weight:700;
+    color:#1D58E8;
+}
+.texto-inferior a:hover{
+    text-decoration:underline;
+}
+
+.modal-content{
+    border:none;
+    border-radius:26px;
+    overflow:hidden;
+}
+.modal-exito{
+    border-bottom:8px solid #33C26F;
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+}
+.modal-body{
+    padding:45px;
+    text-align:center;
+}
+.modal-body i{
+    font-size:65px;
+    color:#304AA4;
+}
+.modal-body h2{
+    color:#1E3D92;
+    font-weight:800;
+    margin-top:20px;
+}
+.modal-body p{
+    margin:18px 0 28px;
+    color:#666;
+}
+.modal-body .btn{
+    border-radius:30px;
+    font-weight:700;
+    padding:10px 40px;
+}
+
+@media(max-width:576px){
+    .tarjeta-pago{
+        padding:25px;
+    }
+    .barra-superior{
+        height:70px;
+    }
+    .barra-superior img{
+        width:45px;
+    }
+}
