@@ -8,7 +8,7 @@
     --text:#2D3448;
     --gray:#7A859E;
     --gold:#FFC107;
-    --shadow:0 15px 40px rgba(40,90,180,.12);
+    --shadow:0 15px 40px rgba(40, 89, 180, 0.192);
 }
 
 *{
@@ -19,14 +19,10 @@
 }
 
 body{
-    background:linear-gradient(180deg,#EEF5FF,#DCEBFF);
+    background:white;
     min-height:100vh;
   
 }
-
-/*=========================
-        CONTENEDOR
-==========================*/
 
 .perfil{
     display:flex;
@@ -34,25 +30,15 @@ body{
     align-items:center;
 }
 
-/*=========================
-        TARJETA
-==========================*/
-
 .perfil-card{
-
-    width:100%;
+    margin-top:40px;
+    width:60%;
     max-width:980px;
-
     background:#fff;
-
     border-radius:28px;
-
     overflow:hidden;
-
     box-shadow:var(--shadow);
-
     animation:aparecer .7s ease;
-
 }
 
 @keyframes aparecer{
@@ -73,33 +59,20 @@ body{
 
 }
 
-/*=========================
-        HEADER
-==========================*/
-
 .perfil-header{
 
-    background:linear-gradient(135deg,#4D7CFE,#6CA8FF);
-
+    background:linear-gradient(135deg,#73bffd,#6cb1ff);
     text-align:center;
-
-    padding:35px 25px 75px;
-
+    padding:35px 25px 45px;
     position:relative;
-
 }
 
 .foto-perfil{
-
     width:120px;
     height:120px;
-
     border-radius:50%;
-
     object-fit:cover;
-
     border:6px solid white;
-
     box-shadow:0 10px 25px rgba(0,0,0,.18);
 
 }

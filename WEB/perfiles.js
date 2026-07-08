@@ -4,7 +4,7 @@ const profesores = {
         profesion: "Tutor de Física",
         experiencia: "4 años",
         tarifa: "$25/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/1.jpeg",
         acerca: "¡Ganas de enseñar nunca faltan!"
     },
     2: {
@@ -12,7 +12,7 @@ const profesores = {
         profesion: "Tutor de Matemáticas",
         experiencia: "4 años",
         tarifa: "$10/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/2.jpeg",
         acerca: "Estudiante de Ingeniería en Sistemas ayudando a estudiantes en Matemáticas y Física."
     },
     3: {
@@ -20,7 +20,7 @@ const profesores = {
         profesion: "Tutor de Química",
         experiencia: "3 años",
         tarifa: "$15/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/3.jpeg",
         acerca: "Licenciada en Química con pasión por enseñar de forma práctica y visual."
     },
     4: {
@@ -28,7 +28,7 @@ const profesores = {
         profesion: "Tutor de Programación",
         experiencia: "5 años",
         tarifa: "$20/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/4.jpeg",
         acerca: "Desarrollador full-stack, enseño desde lo básico hasta proyectos reales."
     },
     5: {
@@ -36,7 +36,7 @@ const profesores = {
         profesion: "Tutor de Inglés",
         experiencia: "6 años",
         tarifa: "$18/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/5.jpeg",
         acerca: "Profesora certificada en enseñanza de inglés como segunda lengua."
     },
     6: {
@@ -44,7 +44,7 @@ const profesores = {
         profesion: "Tutor de Biología",
         experiencia: "4 años",
         tarifa: "$25/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/6.jpeg",
         acerca: "Biólogo apasionado por explicar procesos complejos de forma sencilla."
     },
     7: {
@@ -52,7 +52,7 @@ const profesores = {
         profesion: "Tutor de Historia",
         experiencia: "3 años",
         tarifa: "$12/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/7.jpeg",
         acerca: "Historiadora enfocada en hacer la historia interesante y memorable."
     },
     8: {
@@ -60,7 +60,7 @@ const profesores = {
         profesion: "Tutor de Cálculo",
         experiencia: "7 años",
         tarifa: "$30/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/8.jpeg",
         acerca: "Ingeniero con amplia experiencia preparando estudiantes para exámenes universitarios."
     },
     9: {
@@ -68,7 +68,7 @@ const profesores = {
         profesion: "Tutor de Estadística",
         experiencia: "4 años",
         tarifa: "$17/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/9.jpeg",
         acerca: "Especialista en hacer que los números tengan sentido para cualquier estudiante."
     },
     10: {
@@ -76,7 +76,7 @@ const profesores = {
         profesion: "Tutor de Física Cuántica",
         experiencia: "5 años",
         tarifa: "$22/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/10.jpeg",
         acerca: "Físico apasionado por acercar la ciencia compleja a todos los niveles."
     },
     11: {
@@ -84,7 +84,7 @@ const profesores = {
         profesion: "Tutor de Literatura",
         experiencia: "3 años",
         tarifa: "$12/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/11.jpeg",
         acerca: "Amante de las letras, ayudo a mejorar la escritura y comprensión lectora."
     },
     12: {
@@ -92,7 +92,7 @@ const profesores = {
         profesion: "Tutor de Contabilidad",
         experiencia: "6 años",
         tarifa: "$20/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/12.jpeg",
         acerca: "Contador público con experiencia enseñando finanzas de forma práctica."
     },
     13: {
@@ -100,7 +100,7 @@ const profesores = {
         profesion: "Tutor de Francés",
         experiencia: "4 años",
         tarifa: "$35/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/13.jpeg",
         acerca: "Bilingüe en francés, enfocada en enseñanza conversacional dinámica."
     },
     14: {
@@ -108,7 +108,7 @@ const profesores = {
         profesion: "Tutor de Matemáticas",
         experiencia: "5 años",
         tarifa: "$15/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/14.jpeg",
         acerca: "Profesor de matemáticas con enfoque en resolución de problemas paso a paso."
     },
     15: {
@@ -116,7 +116,7 @@ const profesores = {
         profesion: "Tutor de Psicología",
         experiencia: "3 años",
         tarifa: "$14/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/15.jpeg",
         acerca: "Psicóloga interesada en apoyar el aprendizaje desde una mirada humana."
     },
     16: {
@@ -124,7 +124,7 @@ const profesores = {
         profesion: "Tutor de Robótica",
         experiencia: "4 años",
         tarifa: "$20/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/16.jpeg",
         acerca: "Ingeniero en electrónica, enseño robótica de forma práctica con proyectos."
     },
     17: {
@@ -132,7 +132,7 @@ const profesores = {
         profesion: "Tutor de Marketing",
         experiencia: "5 años",
         tarifa: "$17/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/17.jpeg",
         acerca: "Especialista en marketing digital con experiencia en proyectos reales."
     },
     18: {
@@ -140,7 +140,7 @@ const profesores = {
         profesion: "Tutor de Química",
         experiencia: "11 años",
         tarifa: "$10/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/18.jpeg",
         acerca: "Graduado en Lic. de Ciencias Médicas, con más de 10 años de experiencia como tutor, con resultados comprobados."
     },
     19: {
@@ -148,7 +148,7 @@ const profesores = {
         profesion: "Tutor de Diseño Gráfico",
         experiencia: "4 años",
         tarifa: "$8/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/19.jpeg",
         acerca: "Diseñadora gráfica que ayuda a desarrollar creatividad y técnica."
     },
     20: {
@@ -156,7 +156,7 @@ const profesores = {
         profesion: "Tutor de Física",
         experiencia: "5 años",
         tarifa: "$9/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/20.jpeg",
         acerca: "¡Enseño física de manera sencilla para la comprensión de todos!"
     },
     21: {
@@ -164,7 +164,7 @@ const profesores = {
         profesion: "Tutor de Programación",
         experiencia: "2 años",
         tarifa: "$8/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/21.jpeg",
         acerca: "Graduado de honores en la UTP. Aprenderás de manera eficaz y económica."
     },
     22: {
@@ -172,7 +172,7 @@ const profesores = {
         profesion: "Tutor de Biología",
         experiencia: "1 año",
         tarifa: "$10/hr",
-        foto: "img/perfil.jpg",
+        foto: "fotos/22.jpeg",
         acerca: "Recién graduada de Lic. Biología. Poseo amplios conocimientos y me adapto a la manera de aprender del estudiante."
     }
 };
