@@ -146,21 +146,11 @@ li {
     .tabs, .controles, .ver-respuesta, .imprimir { display: none; }
     .respuesta { display: block !important; }
 }
-
+ 
 .navbar {
     background-color: #f8f9fb !important; 
     padding: 10px 20px;
     font-family: "Inter", sans-serif;
-}
-.navbar .container-fluid {
-    align-items: center;
-}
-.navbar-nav {
-    align-items: center;
-}
-.nav-item {
-    display: flex;
-    align-items: center;
 }
 .navbar-brand{
     cursor: default;
@@ -174,6 +164,7 @@ li {
 }
 .nav-link > i {
     margin-right: 6px;
+    font-family: "Inter", sans-serif;
 }
 .nav-link:hover {
     color: #ffffff;
@@ -204,7 +195,7 @@ li {
     color: #ffffff;
     transform: scale(1.1);
 }
-
+ 
 .offcanvas{
     font-family: "Inter", sans-serif;
 }
@@ -279,7 +270,7 @@ li {
     background: #f5f7ff;
     color: #4f7df5;
 }
-
+ 
 .dropdown-menu {
     border-radius: 10px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
