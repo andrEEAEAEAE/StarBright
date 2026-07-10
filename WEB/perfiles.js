@@ -100,7 +100,7 @@ const profesores = {
         profesion: "Tutor de Francés",
         experiencia: "4 años",
         tarifa: "$35/hr",
-        foto: "fotos/13.jpeg",
+        foto: "fotos/13.jpg",
         acerca: "Bilingüe en francés, enfocada en enseñanza conversacional dinámica."
     },
     14: {
@@ -116,7 +116,7 @@ const profesores = {
         profesion: "Tutor de Psicología",
         experiencia: "3 años",
         tarifa: "$14/hr",
-        foto: "fotos/15.jpeg",
+        foto: "fotos/15.webp",
         acerca: "Psicóloga interesada en apoyar el aprendizaje desde una mirada humana."
     },
     16: {
@@ -132,7 +132,7 @@ const profesores = {
         profesion: "Tutor de Marketing",
         experiencia: "5 años",
         tarifa: "$17/hr",
-        foto: "fotos/17.jpeg",
+        foto: "fotos/17.jpg",
         acerca: "Especialista en marketing digital con experiencia en proyectos reales."
     },
     18: {
@@ -148,7 +148,7 @@ const profesores = {
         profesion: "Tutor de Diseño Gráfico",
         experiencia: "4 años",
         tarifa: "$8/hr",
-        foto: "fotos/19.jpeg",
+        foto: "fotos/19.jpg",
         acerca: "Diseñadora gráfica que ayuda a desarrollar creatividad y técnica."
     },
     20: {
@@ -172,7 +172,7 @@ const profesores = {
         profesion: "Tutor de Biología",
         experiencia: "1 año",
         tarifa: "$10/hr",
-        foto: "fotos/22.jpeg",
+        foto: "fotos/22.jpg",
         acerca: "Recién graduada de Lic. Biología. Poseo amplios conocimientos y me adapto a la manera de aprender del estudiante."
     }
 };
