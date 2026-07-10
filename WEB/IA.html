@@ -1,37 +1,34 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="pago.css">
-<link rel="stylesheet" href="navbar.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<title>Método de pago</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="IA.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Generador de tareas</title>
 </head>
 <body>
 <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
 
-    <!--BARRA LATERAL OFFCANVAS (cuidado con el style que le puse => 20px) El Span contiene el punto rojo que asemeja una notificación para alertar al usuario de revisarlo jajaj-->
     <button class="btn list-icon me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="font-size: 20px;">
       <i class="bi bi-list"> <span class="position-absolute top-1 p-1 bg-danger border border-light rounded-circle"></span></i>
     </button>
-    
-    <!--ACÁ COMIENZA EL NAVBAR CON EL LOGO-->
-        <a class="navbar-brand" href="#">
-            <img src="img/LOGO_WEB-removebg-preview.png" alt="Logo" width="43" height="40" class="d-inline-block align-middle"><b class="gradient-text">TutorNow</b>
-        </a>  
+
+    <a class="navbar-brand" href="#">
+        <img src="img/LOGO_WEB-removebg-preview.png" alt="Logo" width="43" height="40" class="d-inline-block align-middle"><b class="gradient-text">TutorNow</b>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!--revisar el nav-link active para colocarlo también en todos y que al presionarlos se cambien de color y se activen (en el css) NECESITO JAVASCRIPT-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item mx-2">
-          <a class="nav-link" aria-current="page" href="home.html"> 
+          <a class="nav-link" aria-current="page" href="home.html">
             <i class="bi bi-house-door"></i>Inicio </a>
         </li>
         <li class="nav-item mx-2">
@@ -39,7 +36,7 @@
             <i class="bi bi-people"></i>Tutores</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" href="IA.html"> 
+          <a class="nav-link active" href="IA.html">
             <i class="bi bi-book"></i>Recursos</a>
         </li>
         <li class="nav-item mx-2">
@@ -50,14 +47,12 @@
           <a class="nav-link" href="CentroAyuda.html">
             <i class="bi bi-question-circle"></i>Más información</a>
         </li>
-        
-        <!--ÍCONO DE PERFIL DEL NAVBAR-->
+
         <li class="nav-item mx-2 dropdown">
-            <a class="nav-link profile-icon d-flex align-items-center" href="#" 
-            data-bs-toggle="dropdown"> <!--ESE PERFIL.HTML ES UN EJEMPLO-->
+            <a class="nav-link profile-icon d-flex align-items-center" href="#"
+            data-bs-toggle="dropdown">
               <i class="bi bi-person-circle"></i></a>
 
-        <!--lo modifiqué para que tuviera dropdown-->
               <ul class="dropdown-menu dropdown-menu-end" id="dropdown-perfil">
             <li class="text-end px-2 pt-1">
               <button type="button" class="btn-close"></button>
@@ -69,7 +64,7 @@
             </li>
             <hr>
             <li class="dropdown-item">
-              <a href="perfil.html" 
+              <a href="perfil.html"
               style="text-decoration: none; color: #5e6164; font-weight: 500;">
               <i class="bi bi-brush me-2"></i>Editar perfil </a>
             </li>
@@ -80,9 +75,7 @@
     </div>
   </div>
 </nav>
-</header>  
-
-<!--Código del offcanvas (no lo puse arriba para no kgar el navbar)-->
+</header>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
   <div class="offcanvas-header">
     <button class="btn" data-bs-dismiss="offcanvas" style="font-size: 20px;">
@@ -93,28 +86,26 @@
 
   <div class="offcanvas-body">
     <ul class="list-unstyled">
-       
+
         <li class="my-4 mx-3">
         <a href="#" class="offcanvas-link" data-bs-toggle="modal" data-bs-target="#notifModal" data-bs-dismiss="offcanvas">
          Notificaciones <i class="bi bi-bell ms-2"> </i> </a> </li>
         <li class="my-4 mx-3"><a href="notas.html" class="offcanvas-link">Mis notas
         <i class="bi bi-stickies ms-2"></i> </a> </li>
-       <li class="my-4 mx-3"><a href="Guardados.html" class="offcanvas-link">Favoritos
-        <i class="bi bi-bookmarks ms-2"></i> </a> </li>  
+       <li class="my-4 mx-3"><a href="Guardados.html" class="offcanvas-link active">Favoritos
+        <i class="bi bi-bookmarks ms-2"></i> </a> </li>
        <li class="my-4 mx-3"><a href="chat.html" class="offcanvas-link">Mensajes
         <i class="bi bi-chat-square-dots ms-2"></i> </a> </li>
-       <li class="my-4 mx-3"><a href="video.html" class="offcanvas-link">Llamadas
+        <li class="my-4 mx-3"><a href="video.html" class="offcanvas-link">Llamadas
         <i class="bi bi-telephone ms-2"></i> </a> </li>
   <hr>
-      <li class="my-4 mx-3"><a href="pago.html" class="offcanvas-link active">Modo de pago
+      <li class="my-4 mx-3"><a href="pago.html" class="offcanvas-link">Modo de pago
         <i class="bi bi-coin ms-2"></i> </a> </li>
       <li class="my-4 mx-3"><a href="Políticas.html" class="offcanvas-link">Políticas
         <i class="bi bi-shield-lock ms-2"></i> </a> </li>
     </ul>
-    <!--EL MS QUE SE COLOCA AL FINAL DE CIERTAS CLASES COMO "MARGIN (M)". Después del M se coloca (S;E;X;Y) => Start, End, X axis, Y axis -->
-    
-    <!--Ícono de cerrar sesión-->
-     <div class="offcanvas-footer">
+
+    <div class="offcanvas-footer">
       <div class="logout">
         <a class="offcanvas-link" href="#" onclick="toggleMenu(event)"> Salir
           <i class="bi bi-box-arrow-left ms-2"></i></a>
@@ -126,8 +117,6 @@
      </div>
   </div>
 </div>
-
-<!--MODAL DE NOTIFICACIONES-->
 <section>
     <div class="modal fade" id="notifModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -161,86 +150,61 @@
 </div>
 </section>
 
-  <div class="wrap">
-    <h1>Método de pago</h1>
-    <p class="subtitle">Los pagos son realizados mediante transacciones a tarjeta. Los datos del usuarios al que se desea pagar deberán ser 
-        ingresados correctamente para que el pago sea registrado.
-    </p>
+<div class="contenido">
+<div class="hoja">
+  <h1>Generador de ejercicios</h1>
+  <p class="subt">Refuerza tu conocimiento</p>
 
-    <div class="plans">
-      <div class="plan purple">
-        <div class="price-tag">
-          <div class="plan-name">GRATIS</div>
-          <div class="price">$0</div>
-          <div class="per-month">PERMANENTE</div>
-        </div>
-        <ul class="features">
-          <li> <b>REGISTRO</b></li>
-          <li>Puede registrarse en el sitio web sin costos adicionales.</li>
-          
-        </ul>
-       <button class="cta">OBTENER UN PLAN</button>
-      </div>
+  <div class="tabs" id="tabs"></div>
 
-      <div class="plan green">
-        <div class="price-tag">
-          <div class="plan-name">PROMOCIÓN</div>
-          <div class="price">$0</div>
-          <div class="per-month">GRATIS</div>
-        </div>
-        <ul class="features">
-          <li>Las primeras tres clases impartidas por el docente serán gratuitas</li>
-          <li>después se le empezará a impartir una reducción del 7% en su pago recibido.</li>
-        </ul>
-        <button class="cta">OBTENER UN PLAN</button>
-      </div>
-
-      <div class="plan blue">
-        <div class="price-tag">
-          <div class="plan-name">ESTÁNDAR</div>
-          <div class="price">7%</div>
-          <div class="per-month">POR CLASE</div>
-        </div>
-        <ul class="features">
-          <li>7% de las ganancias del docente por clase irán a nuestro sitio web </li>
-          <li>y así financiar el registro de más docentes.</li>
-        </ul>
-        <button class="cta">OBTENER UN PLAN</button>
-      </div>
-
-    </div>
-    <a href="tarjeta.html">
-    <button class="btn-plans">Empezar transacción</button>
-    </a>
+  <div class="controles">
+    <label for="dificultad">Dificultad:</label>
+    <select id="dificultad">
+      <option value="facil">Fácil</option>
+      <option value="media" selected>Media</option>
+      <option value="dificil">Difícil</option>
+    </select>
+    <label for="cantidad">Preguntas:</label>
+    <select id="cantidad">
+      <option value="3">3</option>
+      <option value="5" selected>5</option>
+      <option value="8">8</option>
+    </select>
+    <button class="generar" id="btnGenerar">Generar taller</button>
   </div>
 
-<script>
-  const links = document.querySelectorAll(".nav-link");
+  <div class="taller" id="taller"></div>
+  <button class="imprimir" id="btnImprimir" style="border: none;"></button>
+</div>
+</div>
 
-  links.forEach(link => {
-    link.addEventListener("click", function() {
-      
-      // quitar active de todos
-      links.forEach(l => l.classList.remove("active"));
-      
-      // agregar active al que se clickeó
-      this.classList.add("active");
-    });
-  });
-</script>
+<script src="IA.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const OffClinks = document.querySelectorAll(".offcanvas-link");
+const links = document.querySelectorAll(".nav-link");
 
-  OffClinks.forEach(link => {
-    link.addEventListener("click", function() {
-      
-      OffClinks.forEach(l => l.classList.remove("active"));
-      
-      this.classList.add("active");
-    });
+links.forEach(link => {
+  link.addEventListener("click", function() {
+
+    // quitar active de todos
+    links.forEach(l => l.classList.remove("active"));
+
+    // agregar active al que se clickeó
+    this.classList.add("active");
   });
-</script>
-<script>
+});
+
+const OffClinks = document.querySelectorAll(".offcanvas-link");
+
+OffClinks.forEach(link => {
+  link.addEventListener("click", function() {
+
+    OffClinks.forEach(l => l.classList.remove("active"));
+
+    this.classList.add("active");
+  });
+});
+
 function toggleMenu(event){
     event.preventDefault();
     document.getElementById("logoutMenu").classList.toggle("show");
@@ -254,7 +218,7 @@ document.addEventListener("click", function(e){
         document.getElementById("logoutMenu").classList.remove("show");
     }
 });
+
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

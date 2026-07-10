@@ -39,7 +39,7 @@
             <i class="bi bi-people"></i>Tutores</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" href="#"> 
+          <a class="nav-link" href="IA.html"> 
             <i class="bi bi-book"></i>Recursos</a>
         </li>
         <li class="nav-item mx-2">
@@ -51,7 +51,6 @@
             <i class="bi bi-question-circle"></i>Más información</a>
         </li>
         
-        <!--ÍCONO DE PERFIL DEL NAVBAR-->
         <li class="nav-item mx-2 dropdown">
             <a class="nav-link profile-icon d-flex align-items-center" href="#" 
             data-bs-toggle="dropdown"> <!--ESE PERFIL.HTML ES UN EJEMPLO-->
@@ -82,7 +81,7 @@
 </nav>
 </header>  
 
-<!--Código del offcanvas (no lo puse arriba para no kgar el navbar)-->
+<!--Código del offcanvas (no lo puse arriba para no dañar el navbar)-->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
   <div class="offcanvas-header">
     <button class="btn" data-bs-dismiss="offcanvas" style="font-size: 20px;">
@@ -111,7 +110,7 @@
       <li class="my-4 mx-3"><a href="Políticas.html" class="offcanvas-link">Políticas
         <i class="bi bi-shield-lock ms-2"></i> </a> </li>
     </ul>
-    <!--EL MS QUE SE COLOCA AL FINAL DE CIERTAS CLASES COMO "MARGIN (M)". Después del M se coloca (S;E;X;Y) => Start, End, X axis, Y axis -->
+    <!--EL MS QUE SE COLOCA AL FINAL DE CIERTAS CLASES COMO "MARGIN (M)". Después del M se coloca => Start, End, X axis, Y axis -->
     
     <!--Ícono de cerrar sesión-->
      <div class="offcanvas-footer">
@@ -265,5 +264,46 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="tarjetas.js"></script>
+<script>
+  const links = document.querySelectorAll(".nav-link");
+
+  links.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      // quitar active de todos
+      links.forEach(l => l.classList.remove("active"));
+      
+      // agregar active al que se clickeó
+      this.classList.add("active");
+    });
+  });
+</script>
+<script>
+  const OffClinks = document.querySelectorAll(".offcanvas-link");
+
+  OffClinks.forEach(link => {
+    link.addEventListener("click", function() {
+      
+      OffClinks.forEach(l => l.classList.remove("active"));
+      
+      this.classList.add("active");
+    });
+  });
+</script>
+<script>
+function toggleMenu(event){
+    event.preventDefault();
+    document.getElementById("logoutMenu").classList.toggle("show");
+}
+
+// Cierra el menú si haces clic fuera
+document.addEventListener("click", function(e){
+    const menu = document.querySelector(".logout");
+
+    if(!menu.contains(e.target)){
+        document.getElementById("logoutMenu").classList.remove("show");
+    }
+});
+</script>
 </body>
 </html>

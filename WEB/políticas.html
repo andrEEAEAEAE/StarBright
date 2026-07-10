@@ -39,7 +39,7 @@
             <i class="bi bi-people"></i>Tutores</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" href="#"> 
+          <a class="nav-link" href="IA.html"> 
             <i class="bi bi-book"></i>Recursos</a>
         </li>
         <li class="nav-item mx-2">
@@ -225,22 +225,6 @@
       this.classList.add("active");
     });
   });
-</script>
-<!--SCRIPT DEL POP-UP-->
-<script>
-    function cerrarPopup() {
-        document.getElementById("popup").style.display = "none";
-    }
-
-    window.onload = function () {
-        // Chequea si el popup ya se mostró en esta sesión
-        if (!sessionStorage.getItem("popupMostrado")) {
-            setTimeout(function () {
-                document.getElementById("popup").style.display = "flex";
-                sessionStorage.setItem("popupMostrado", "true");
-            }, 1000);
-        }
-    };
 </script>
 <!--Script de exit-->
 <script>

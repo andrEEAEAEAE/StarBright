@@ -126,19 +126,13 @@
         </div>
     </div>
 </div>
-<script>
-    // ==============================
-// ELEMENTOS
-// ==============================
 
+<script>
 const modal = document.getElementById("modal");
 const abrirModal = document.getElementById("abrirModal");
 const cerrarModal = document.getElementById("cerrarModal");
 const perfil = document.querySelector(".perfil");
 
-// ==============================
-// ABRIR MODAL
-// ==============================
 
 abrirModal.addEventListener("click", () => {
 
@@ -146,19 +140,12 @@ abrirModal.addEventListener("click", () => {
 
 });
 
-// ==============================
-// CERRAR MODAL
-// ==============================
 
 cerrarModal.addEventListener("click", () => {
 
     modal.style.display = "none";
 
 });
-
-// ==============================
-// CERRAR AL DAR CLIC AFUERA
-// ==============================
 
 window.addEventListener("click", (e) => {
 
@@ -170,10 +157,6 @@ window.addEventListener("click", (e) => {
 
 });
 
-// ==============================
-// ESC PARA CERRAR
-// ==============================
-
 document.addEventListener("keydown", (e)=>{
 
     if(e.key === "Escape"){
@@ -184,9 +167,6 @@ document.addEventListener("keydown", (e)=>{
 
 });
 
-// ==============================
-// ANIMACIÓN AL CARGAR
-// ==============================
 
 window.addEventListener("load", ()=>{
 
@@ -204,6 +184,5 @@ window.addEventListener("load", ()=>{
 
 });
 </script>
-
 </body>
 </html>

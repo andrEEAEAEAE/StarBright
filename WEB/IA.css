@@ -1,0 +1,297 @@
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #1F2A44;
+    font-family: "Inter", sans-serif;
+}
+.contenido {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+}
+.hoja {
+    max-width: 640px;
+    width: 100%;
+}
+h1 {
+    font-size: 2rem;
+    margin: 0 0 0.25rem;
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 5px;
+    font-weight: 600;
+     background: linear-gradient(135deg, rgb(65, 120, 223), rgb(170, 238, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.subt {
+    color: #55607A;
+    font-size: 17px;
+    margin: 0 0 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-family: Arial, sans-serif;
+}
+.tab {
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #D9D2BE;
+    border-radius: 6px;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #55607A;
+    font-weight: 600;
+}
+.tab.activa {
+    background: linear-gradient(40deg, rgba(0, 0, 255, 0.719), skyblue);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+}
+.controles {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+select, button.generar {
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #D9D2BE;
+    background: #fff;
+    cursor: pointer;
+}
+button.generar {
+    background: #5fc5ee;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+ 
+button.generar:hover { 
+    opacity: 0.9; 
+}
+ 
+.taller {
+    background: #ffffff;
+    border: 4px solid #d8dde2;
+    border-radius: 10px;
+    padding: 1.5rem 1.7rem;
+}
+.taller h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 30px;
+    color: #373757;
+}
+ol { 
+    padding-left: 1.3rem; margin: 0; 
+}
+li { 
+    margin-bottom: 1.7rem; line-height: 1.5; 
+}
+.ver-respuesta {
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+    color: #2550af;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 0.3rem;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.respuesta {
+    display: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    background: #E4EFE9;
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    margin-top: 0.4rem;
+}
+.respuesta.visible { 
+    display: block; 
+}
+ 
+.imprimir {
+    margin-top: 1.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #55607A;
+    background: none;
+    border: 1px solid #D9D2BE;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+@media print {
+    .tabs, .controles, .ver-respuesta, .imprimir { display: none; }
+    .respuesta { display: block !important; }
+}
+ 
+.navbar {
+    background-color: #f8f9fb !important; 
+    padding: 10px 20px;
+    font-family: "Inter", sans-serif;
+}
+.navbar-brand{
+    cursor: default;
+}
+.nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.nav-link > i {
+    margin-right: 6px;
+}
+.nav-link:hover {
+    color: #ffffff;
+    background:rgba(163, 199, 252, 0.596);
+    border-radius: 12px;
+    padding: 6px 12px;  
+}
+.nav-link.active {
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144, 198, 252));  
+    border-radius: 12px;
+    color: white !important;
+    padding: 6px 12px;
+}
+.gradient-text {
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.profile-icon {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    color: #6c757d;
+    transition: 0.3s;
+}
+.profile-icon:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+ 
+.offcanvas{
+    font-family: "Inter", sans-serif;
+}
+.offcanvas-title{
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144,198,252));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+#menuLateral {
+    transition: 300ms;
+    width: 300px;
+}  
+.list-icon:hover{
+    color: #0d6efd;
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+.offcanvas-link{
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 17px;
+}
+.offcanvas-link:hover{
+    color: #0d6efd;
+}
+.offcanvas-link.active {
+    background: linear-gradient(135deg, rgb(13,110,253), rgb(144, 198, 252));  
+    border-radius: 14px;
+    color: white !important;
+    padding: 6px 12px;
+}
+.offcanvas-footer{
+    position: absolute;
+    bottom: 40px;
+    left: 35px;
+}
+.logout{
+    position: relative;
+}
+.logout-menu{
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 180px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: .25s;
+}
+.logout-menu.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.logout-menu a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    color: #444;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: .2s;
+}
+.logout-menu a:hover{
+    background: #f5f7ff;
+    color: #4f7df5;
+}
+ 
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+#dropdown-perfil{
+    width: 250px;
+    height: 160px;
+}
+#FotoPerfilDrop{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 6px;
+    vertical-align: middle;
+    border: 1px solid #e5e6eb;
+}
+#NombrePerfilDrop{
+    font-size: 15px;
+}
+#dropdown-perfil .btn-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 12px;
+}
