@@ -36,7 +36,7 @@
 <!--FORMULARIO-->
     <div class="container">
     <div class="formulario">
-    <form action="#" method="post">
+    <form id="formRegistro">
         <br>
         <input type="email" id="email" class="form-control" placeholder="E-mail" required><br>
         
@@ -90,6 +90,12 @@
     </div>
     </div>
 
-  
+  <script>
+  document.getElementById("formRegistro").addEventListener("submit", function(e){
+    e.preventDefault(); 
+    
+    window.location.href = "home.html"; 
+    });
+</script>
 </body>
 </html>

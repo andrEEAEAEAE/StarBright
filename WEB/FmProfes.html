@@ -33,10 +33,10 @@
     </div>
     <img src="imag/𝐋𝐨_𝐌𝐞𝐣𝐨𝐫_𝐝𝐞_𝐀𝐫𝐜𝐚𝐧𝐨-removebg-preview.png" class="banner-img">
     </div>
-<!--FORMULARIO-->
+
     <div class="container">
     <div class="formulario">
-    <form action="#" method="post">
+    <form id="formRegistro">
         <br>
         <input type="email" id="email" class="form-control" placeholder="E-mail" required><br>
         
@@ -87,12 +87,17 @@
         <br>
         <textarea id="descripcion" class="form-control" placeholder="Escribe una breve descripción sobre ti y tu experiencia como tutor..." rows="4"></textarea>
         <br>
-       <button type="submit" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">
+        <button type="submit" id="btnRegistro" style="border-radius: 20px; font-size: 1.3rem">
          Enviar
         </button>
     </form>
     </div>
- 
-  
+ <script>
+  document.getElementById("formRegistro").addEventListener("submit", function(e){
+    e.preventDefault(); 
+    
+    window.location.href = "home.html"; 
+    });
+</script>
 </body>
 </html>
