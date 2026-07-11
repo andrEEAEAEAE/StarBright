@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>Inicio</title>
 </head>
 <body>
     <div class="overlay" id="popup">
@@ -182,9 +182,10 @@
 </section> 
 
 <main>
-  <!--El hero-->
+  <!--El hero (SIN TOCAR SU ESTRUCTURA: solo se envolvió la imagen para poder
+  agregarle el borde punteado y las tarjetas flotando encima)-->
     <div class="container my-5"> 
-        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 shadow-lg"> 
+        <div class="row p-4 pb-1 pe-lg-4 pt-lg-5 align-items-center rounded-3 shadow-lg"> 
             <div class="col-lg-7 p-3 p-lg-5 pt-lg-3"> 
                 <h1 class="display-4 fw-bold lh-1" style="color: rgb(62, 62, 62);">¡TutorNow!</h1> 
                 <p class="lead"><q class="frase">Tu apoyo académico, siempre contigo</q></p> 
@@ -196,52 +197,77 @@
             </div> 
             <!--p0 Significa padding=0. Si quiero que la imgagen tenga un margen bonito puedo subirlo a p4.-->
             <div class="col-lg-4 p-0 mb-5">
-                <img class="rounded-lg-3" src="img/hero-removebg-preview (1).png" width="330">
+                <div class="hero-image-wrap">
+                    <img class="rounded-lg-3" src="img/hero-removebg-preview (1).png" width="330">
+
+                    <div class="hero-float-card hf1">
+                        <div class="ico" style="background:#E9F4E3;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                        </div>
+                        <div>Mejoría<br><small>Garantizada</small></div>
+                    </div>
+
+                    <div class="hero-float-card hf2">
+                        <div class="ico" style="background:#E7EEFF;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d6efd" stroke-width="2.2" stroke-linecap="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                        </div>
+                        <div>Comunicación<br><small>Videollamadas cuando quieras</small></div>
+                    </div>
+                </div>
             </div> 
         </div> 
     </div>
     <!--Estas son las funciones-->
+    <section>
+    <div class="section-head">
+      <h2>Con la atención que los <span class="accent">jóvenes necesitan</span></h2>
+    </div>
+
     <div class="container px-4 py-5" id="featured-3">  
-        <h2 class="pb-2">Funciones principales</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3"> 
+        <div class="row g-4 py-4 row-cols-1 row-cols-lg-3"> 
             <div class="feature col"> 
-                <h4 class="fs-2 text-body-emphasis"> IA </h4>
+              <div class="feature-card">
+                <h4 class="fs-3 text" style="color: rgb(110, 110, 110); font-weight: 600;"> Generador inteligente </h4>
                  <!--Div para la imagen-->
                 <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2"> 
-                    <img src="img/IA.png" class="rounded-3" width="200">
+                    <img src="img/IA.png" class="rounded-3" width="150">
                     </div> 
-                    <p>Contamos con una herramienta de inteligencia artifial generativa la cual podrán utilizar 
-                      si se desea reforzar conocimientos en temas. Esta IA genera talleres interactivos descargables.
+                    <p>Contamos con un generador de ejercicios interactivos por 
+                        si el usuario desea reforzar conocimientos generales.
                     </p>
+              </div>
             </div>
             <div class="feature col"> 
-                <h4 class="fs-2 text-body-emphasis">Mis tutorías </h4> 
+              <div class="feature-card">
+                <h4 class="fs-3 text" style="color: rgb(110, 110, 110); font-weight: 600;">Mis tutorías </h4> 
                 <!--Div para la imagen-->
                 <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2 mb-3"> 
-                    <img src="img/Calendario.png" class="rounded-3" width="200">
+                    <img src="img/Calendario.png" class="rounded-3" width="150">
                     </div> 
-                    <p>'Mis tutorías' es apratado de calendario que le permite ingresar al usuario las fechas ocupadas por tutorías.
-                      Esta función se implementó con el fin de llevar una constancia de las clases impartidas y recibidas.</p> 
+                    <p>Es un apartado de calendario que le permite ingresar al usuario las fechas ocupadas por tutorías.
+                      Esta función registra la constancia de las clases impartidas y recibidas.</p> 
+              </div>
             </div> 
             <div class="feature col"> 
-                <h4 class="fs-2 text-body-emphasis"> Buscar </h4> 
+              <div class="feature-card">
+                <h4 class="fs-3 text" style="color: rgb(110, 110, 110); font-weight: 600;"> Buscar </h4> 
                  <!--Div para la imagen-->
                 <div class="feature-img d-inline-flex align-items-center justify-content-center fs-2 mb-3"> 
-                    <img src="img/Buscar.png" class="rounded-3" width="200">
+                    <img src="img/Buscar.png" class="rounded-3" width="150">
                     </div> 
-                    <p>El apartado de 'buscar' le permite al usuario la busqueda de perfiles de docentes o estudiantes ¡Siéntanse cómodos de 
-                      escoger su preferido!
+                    <p>Este apartado le permite al usuario la búsqueda de perfiles de docentes aptos ¡Escoged su preferido!
                     </p> 
+              </div>
             </div>
         </div> 
     </div>
     <!--Esta es la información general-->
-    <div class="container px-4"> 
-        <h2 class="pb-2">Información general</h2> 
-        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5"> 
+    <div class="container px-1"> 
+        <div class="info-card">
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-2"> 
             <div class="col d-flex flex-column align-items-start gap-2"> 
-                <h2 class="fw-bold text-body-emphasis">¿Cómo nos manejamos?</h2> 
-                <p class="text-body-secondary">Esta es una plataforma interactiva que conecta a estudiantes con tutores listos para echarles una mano en lo que necesiten. Nuestra web ofrece variedad de docentes disponibles y dispuestos a ofrecer la ayuda exacta que necesitan.
+                <h2 class="fw-bold">¿Cómo nos manejamos?</h2> 
+                <p class="info-text">Esta es una plataforma interactiva que conecta a estudiantes con tutores listos para echarles una mano en lo que necesiten. Nuestra web ofrece variedad de docentes disponibles y dispuestos a ofrecer la ayuda exacta que necesitan.
                   Con nuestra plataforma, los estudiantes pueden obtener un soporte académico de manera sencilla y desde cualquier lugar. Ofrecemos una forma más accesible y flexible de aprender, adaptadas a las necesidades estudiantiles.
                 </p> 
             </div> 
@@ -253,7 +279,82 @@
             </div>
         </div>
         </div>
-    </div> 
+        </div> 
+    </div>
+    </section>
+
+    <div class="container px-1 why-us" id="porque-elegirnos">
+        <div class="info-card">
+        <div class="row row-cols-1 row-cols-md-2 align-items-center g-5">
+
+            <div class="col order-md-2">
+                <h2>Aprendizaje que<br>se adapta a ti</h2>
+                <p class="lead-text">Cada estudiante avanza distinto, por eso emparejamos a cada uno con el tutor
+                  ideal para su ritmo, su horario y su forma de aprender. Nada de clases genéricas: aquí el
+                  seguimiento es personal, de principio a fin.</p>
+
+                <ul class="check-list">
+                    <li>
+                        <span class="dot">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
+                        Tutores verificados y evaluados
+                    </li>
+                    <li>
+                        <span class="dot">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
+                        Sesiones 1 a 1, 100% flexibles
+                    </li>
+                    <li>
+                        <span class="dot">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
+                        Seguimiento de tu progreso semana a semana
+                    </li>
+                </ul>
+
+                <a href="CentroAyuda.html" class="btn btn-primary btn-lg px-4 fw-bold">Conocer más</a>
+            </div>
+
+            <div class="col order-md-1">
+                <div class="why-us-art">
+                    <svg viewBox="0 0 480 460" width="100%" height="100%">
+                        <path fill="#EAF1FF" d="M60 140c40-70 140-100 230-70 80 27 140 100 130 180-10 82-90 140-180 150-88 10-170-38-200-116C10 226 30 190 60 140z"/>
+                        <!-- birrete / graduation cap -->
+                        <path d="M240 130 130 175l110 45 110-45-110-45z" fill="#0d6efd"/>
+                        <path d="M175 200v40c0 16 30 28 65 28s65-12 65-28v-40l-65 27-65-27z" fill="#144cc4"/>
+                        <line x1="345" y1="180" x2="345" y2="235" stroke="#144cc4" stroke-width="4"/>
+                        <circle cx="345" cy="240" r="7" fill="#144cc4"/>
+                        <!-- libro -->
+                        <path d="M120 300c0-10 44-18 90-18s90 8 90 18v70c0 10-44 4-90 4s-90 6-90-4v-70z" fill="#ffffff" stroke="#0d6efd" stroke-width="4"/>
+                        <line x1="210" y1="284" x2="210" y2="372" stroke="#0d6efd" stroke-width="4"/>
+                        <line x1="140" y1="308" x2="190" y2="302" stroke="#c9dcff" stroke-width="4"/>
+                        <line x1="140" y1="326" x2="190" y2="320" stroke="#c9dcff" stroke-width="4"/>
+                        <line x1="230" y1="302" x2="280" y2="308" stroke="#c9dcff" stroke-width="4"/>
+                        <line x1="230" y1="320" x2="280" y2="326" stroke="#c9dcff" stroke-width="4"/>
+                        <!-- estrellas -->
+                        <circle cx="90" cy="230" r="5" fill="#90c6fc"/>
+                        <circle cx="370" cy="300" r="6" fill="#0d6efd"/>
+                        <circle cx="330" cy="120" r="4" fill="#90c6fc"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+
+    <div class="container px-4 pb-5">
+        <div class="cta-band">
+            <svg class="cta-dots" viewBox="0 0 200 200" width="180" fill="#ffffff">
+                <circle cx="30" cy="170" r="14"/><circle cx="60" cy="130" r="16"/>
+                <circle cx="95" cy="90" r="18"/><circle cx="135" cy="50" r="20"/>
+            </svg>
+            <h2>¿Listo para mejorar tus notas? Empieza hoy mismo.</h2>
+        </div>
+    </div>
 </main>  
    <!--footer--> 
     <div class="container"> 

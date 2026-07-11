@@ -95,7 +95,7 @@
     padding:15px 30px;
     border-radius:999px;
     font-weight:600;
-    font-size:15px;
+    font-size:18px;
     color:#4A57C9;
     background:#FFFFFF;
     border:1px solid rgba(93,107,224,0.25);
@@ -111,15 +111,15 @@
     padding:15px 32px;
     border-radius:999px;
     font-weight:600;
-    font-size:15px;
+    font-size:18px;
     color:#FFFFFF;
     background:linear-gradient(135deg,#5D6BE0,#8B6EE8);
-    box-shadow:0 10px 24px rgba(93,107,224,0.32);
+    box-shadow:0 4px 14px rgba(93,107,224,0.08);
     transition:transform .2s ease, box-shadow .2s ease;
   }
   .btn-solid:hover{
     transform:translateY(-2px);
-    box-shadow:0 14px 30px rgba(93,107,224,0.4);
+    box-shadow:0 8px 20px rgba(93, 106, 224, 0.226);
   }
 
   .art{
