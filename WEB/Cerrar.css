@@ -38,6 +38,7 @@ body{
     font-size:1.4rem;
     color:#6d7484;
     line-height:1.6;
+    margin-bottom: 30px;
 }
 .imagen{
     width:40%;
@@ -70,3 +71,13 @@ body{
     z-index:3;
     width: 125px;
 }
+.nav-inicio{
+    background: rgb(48, 48, 48);  
+    color: white;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 20px;
+}
+
