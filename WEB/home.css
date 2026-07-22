@@ -589,3 +589,11 @@ Main{
     color: gray;
     font-size: 16px;
 }
+.nav-anuncio{
+    background: linear-gradient(135deg, rgb(108, 117, 247), rgb(189, 200, 255));  
+    border-radius: 12px;
+    color: white !important;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
